@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import {
   Avatar,
@@ -49,21 +50,26 @@ export function GroupedShortcutRow({ group }: { group: ShortcutGroup }) {
   return (
     <Card className="transition hover:border-black/[.12] dark:hover:border-white/[.16]">
       <CardContent>
-        <button
-          aria-expanded={expanded}
-          className="flex w-full items-start justify-between gap-4 text-left outline-none focus-visible:ring-2 focus-visible:ring-black/[.08] dark:focus-visible:ring-white/[.12]"
-          onClick={() => setExpanded((value) => !value)}
-          type="button"
-        >
+        <div className="flex items-start justify-between gap-4">
           <div className="min-w-0 flex-1">
-            <h3 className="text-base font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
-              {group.action}
-            </h3>
+            <Link
+              className="block outline-none focus-visible:ring-2 focus-visible:ring-black/[.08] dark:focus-visible:ring-white/[.12]"
+              href={`/shortcuts/${group.id}`}
+            >
+              <h3 className="text-base font-semibold tracking-tight text-zinc-950 transition hover:text-zinc-700 dark:text-zinc-50 dark:hover:text-zinc-300">
+                {group.action}
+              </h3>
+            </Link>
             <p className="mt-1 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
               {group.description}
             </p>
 
-            <div className="mt-4 flex flex-wrap items-center gap-3">
+            <button
+              aria-expanded={expanded}
+              className="mt-4 flex w-full flex-wrap items-center gap-3 text-left outline-none focus-visible:ring-2 focus-visible:ring-black/[.08] dark:focus-visible:ring-white/[.12]"
+              onClick={() => setExpanded((value) => !value)}
+              type="button"
+            >
               <AvatarGroup>
                 {group.entries.map(({ company }) => (
                   <Avatar key={company.id} title={company.name}>
@@ -76,14 +82,15 @@ export function GroupedShortcutRow({ group }: { group: ShortcutGroup }) {
                 ))}
               </AvatarGroup>
               <span className="text-xs text-zinc-500 dark:text-zinc-400">
-                used by {appCount} app{appCount === 1 ? "" : "s"}
+                used by {appCount} app{appCount === 1 ? "" : "s"} ·{" "}
+                {expanded ? "hide" : "show"} contexts
               </span>
               <div className="flex flex-wrap gap-1.5">
                 {group.tags.map((tag) => (
                   <Badge key={tag}>{tag}</Badge>
                 ))}
               </div>
-            </div>
+            </button>
           </div>
 
           <KbdGroup>
@@ -91,7 +98,7 @@ export function GroupedShortcutRow({ group }: { group: ShortcutGroup }) {
               <Chord key={chord.join("+")} keys={chord} />
             ))}
           </KbdGroup>
-        </button>
+        </div>
 
         {expanded ? (
           <ul className="mt-5 space-y-2 border-t border-black/[.06] pt-4 dark:border-white/[.06]">
@@ -112,14 +119,12 @@ export function GroupedShortcutRow({ group }: { group: ShortcutGroup }) {
                         unoptimized
                         width={16}
                       />
-                      <a
+                      <Link
                         className="truncate text-sm font-medium text-zinc-700 transition hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-zinc-50"
-                        href={company.website}
-                        rel="noreferrer"
-                        target="_blank"
+                        href={`/companies/${company.slug}`}
                       >
                         {company.name}
-                      </a>
+                      </Link>
                       <span
                         aria-hidden="true"
                         className="text-xs text-zinc-500 dark:text-zinc-400"
