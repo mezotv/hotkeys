@@ -1,6 +1,7 @@
+import { groupHotkeys } from "@/utils/grouping";
 import companiesJson from "../../companies.json";
 import shortcutsJson from "../../shortcuts.json";
-import type { Shortcut } from "./types";
+import type { CompanyWithShortcuts, Shortcut, ShortcutGroup } from "./types";
 import { validateDirectoryData } from "./validation";
 
 export function filterShortcuts(
@@ -69,7 +70,7 @@ export function loadDirectoryData() {
     first.action.localeCompare(second.action),
   );
 
-  const companiesWithShortcuts = companies
+  const companiesWithShortcuts: CompanyWithShortcuts[] = companies
     .map((company) => ({
       ...company,
       shortcuts: shortcuts.filter(
@@ -78,9 +79,38 @@ export function loadDirectoryData() {
     }))
     .filter((company) => company.shortcuts.length > 0);
 
+  const hotkeys = companiesWithShortcuts.flatMap((company) =>
+    company.shortcuts.map((shortcut) => ({ company, shortcut })),
+  );
+
+  const shortcutGroups = groupHotkeys(hotkeys);
+
   return {
     companies,
     shortcuts,
     companiesWithShortcuts,
+    shortcutGroups,
   };
+}
+
+export function findCompanyBySlug(slug: string): CompanyWithShortcuts | null {
+  const { companies, shortcuts } = loadDirectoryData();
+  const company = companies.find((entry) => entry.slug === slug);
+
+  if (!company) {
+    return null;
+  }
+
+  return {
+    ...company,
+    shortcuts: shortcuts.filter(
+      (shortcut) => shortcut.companyId === company.id,
+    ),
+  };
+}
+
+export function findShortcutGroupBySlug(slug: string): ShortcutGroup | null {
+  const { shortcutGroups } = loadDirectoryData();
+
+  return shortcutGroups.find((group) => group.id === slug) ?? null;
 }
