@@ -44,6 +44,17 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          async
+          crossOrigin="anonymous"
+          data-client-id="35eb5a41-4158-4be0-85a8-ca907146f05e"
+          data-track-errors="true"
+          data-track-hash-changes="true"
+          data-track-interactions="true"
+          src="https://cdn.databuddy.cc/databuddy.js"
+        />
+      </head>
       <body className="flex min-h-full flex-col bg-zinc-50 text-zinc-950 selection:bg-zinc-950 selection:text-white dark:bg-black dark:text-zinc-50 dark:selection:bg-zinc-50 dark:selection:text-black">
         <div className="flex min-h-screen flex-col">
           <SiteHeader />
