@@ -1,30 +1,18 @@
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { AUTHOR_URL, GITHUB_REPO_URL } from "@/lib/constants";
-import type { ViewMode } from "@/lib/types";
 import { AddShortcutButton } from "./add-shortcut-button";
 
-const viewOptions: { label: string; value: ViewMode }[] = [
-  { label: "shortcuts", value: "shortcuts" },
-  { label: "companies", value: "companies" },
-];
-
-export function Header({
-  viewMode,
-  onViewModeChange,
-}: {
-  viewMode: ViewMode;
-  onViewModeChange: (mode: ViewMode) => void;
-}) {
+export function SiteHeader() {
   return (
     <header className="mx-auto flex w-full max-w-3xl items-center justify-between gap-4 px-6 py-8 sm:px-8">
       <div className="flex flex-col leading-none sm:flex-row sm:items-baseline sm:gap-1.5">
-        <a
+        <Link
           className="text-sm font-semibold tracking-tight text-zinc-950 dark:text-zinc-50"
           href="/"
         >
           hotkeys
-        </a>
+        </Link>
         <span className="text-xs font-medium text-zinc-500 dark:text-zinc-400">
           by{" "}
           <a
@@ -39,23 +27,6 @@ export function Header({
       </div>
 
       <nav className="flex items-center gap-2">
-        <ToggleGroup
-          aria-label="View mode"
-          onValueChange={(value) => {
-            const next = value[0];
-
-            if (next === "shortcuts" || next === "companies") {
-              onViewModeChange(next);
-            }
-          }}
-          value={[viewMode]}
-        >
-          {viewOptions.map((option) => (
-            <ToggleGroupItem key={option.value} value={option.value}>
-              {option.label}
-            </ToggleGroupItem>
-          ))}
-        </ToggleGroup>
         <Button
           className="hidden sm:inline-flex"
           nativeButton={false}

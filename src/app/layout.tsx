@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { SiteFooter } from "@/components/directory/site-footer";
+import { SiteHeader } from "@/components/directory/site-header";
 import { SITE_URL } from "@/lib/constants";
 import "./globals.css";
 
@@ -38,7 +40,13 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-zinc-50 text-zinc-950 selection:bg-zinc-950 selection:text-white dark:bg-black dark:text-zinc-50 dark:selection:bg-zinc-50 dark:selection:text-black">
-        {children}
+        <div className="flex min-h-screen flex-col">
+          <SiteHeader />
+          <main className="mx-auto w-full max-w-3xl flex-1 px-6 pb-8 sm:px-8">
+            {children}
+          </main>
+          <SiteFooter />
+        </div>
       </body>
     </html>
   );

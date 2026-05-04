@@ -3,21 +3,26 @@
 import { useEffect, useMemo, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { STORAGE_KEYS } from "@/lib/constants";
-import type { CompanyWithShortcuts, ViewMode } from "@/lib/types";
+import type {
+  CompanyWithShortcuts,
+  ShortcutGroup,
+  ViewMode,
+} from "@/lib/types";
 import { groupHotkeys } from "@/utils/grouping";
 import { companyMatchesQuery, shortcutMatchesQuery } from "@/utils/search";
 import { CompanyCard } from "./company-card";
-import { Footer } from "./footer";
 import { GroupedShortcutRow } from "./grouped-shortcut-row";
-import { Header } from "./header";
 import { SearchBar } from "./search-bar";
+import { ViewModeToggle } from "./view-mode-toggle";
 
 export function DirectoryShell({
   companies,
   shortcutCount,
+  initialShortcutGroups,
 }: {
   companies: CompanyWithShortcuts[];
   shortcutCount: number;
+  initialShortcutGroups: ShortcutGroup[];
 }) {
   const [query, setQuery] = useState("");
   const [viewMode, setViewMode] = useState<ViewMode>("shortcuts");
@@ -52,8 +57,9 @@ export function DirectoryShell({
   );
 
   const shortcutGroups = useMemo(
-    () => groupHotkeys(filteredHotkeys),
-    [filteredHotkeys],
+    () =>
+      query.trim() ? groupHotkeys(filteredHotkeys) : initialShortcutGroups,
+    [filteredHotkeys, initialShortcutGroups, query],
   );
 
   const filteredCompanies = useMemo(
@@ -70,24 +76,22 @@ export function DirectoryShell({
     viewMode === "shortcuts" ? "shortcut groups" : "companies";
 
   return (
-    <div className="flex min-h-screen flex-col">
-      <Header onViewModeChange={handleViewModeChange} viewMode={viewMode} />
+    <>
+      <section className="py-16 sm:py-24">
+        <h1 className="max-w-2xl text-4xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50 sm:text-6xl">
+          Hotkeys, by action.
+        </h1>
+        <p className="mt-5 max-w-xl text-base leading-7 text-zinc-600 dark:text-zinc-400 sm:text-lg sm:leading-8">
+          Search the action first, then see which apps use it and which keys
+          they bind.
+        </p>
 
-      <main className="mx-auto w-full max-w-3xl flex-1 px-6 pb-8 sm:px-8">
-        <section className="py-16 sm:py-24">
-          <h1 className="max-w-2xl text-4xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50 sm:text-6xl">
-            Hotkeys, by action.
-          </h1>
-          <p className="mt-5 max-w-xl text-base leading-7 text-zinc-600 dark:text-zinc-400 sm:text-lg sm:leading-8">
-            Search the action first, then see which apps use it and which keys
-            they bind.
-          </p>
+        <div className="mt-8">
+          <SearchBar onQueryChange={setQuery} query={query} />
+        </div>
 
-          <div className="mt-8">
-            <SearchBar onQueryChange={setQuery} query={query} />
-          </div>
-
-          <div className="mt-5 flex flex-wrap gap-2 text-sm text-zinc-500 dark:text-zinc-400">
+        <div className="mt-5 flex flex-wrap items-center justify-between gap-3 text-sm text-zinc-500 dark:text-zinc-400">
+          <div className="flex flex-wrap gap-2">
             <span>{shortcutCount} shortcuts</span>
             <span aria-hidden="true">/</span>
             <span>{companies.length} companies</span>
@@ -96,35 +100,37 @@ export function DirectoryShell({
               {visibleCount} {visibleLabel} visible
             </span>
           </div>
-        </section>
+          <ViewModeToggle
+            onViewModeChange={handleViewModeChange}
+            viewMode={viewMode}
+          />
+        </div>
+      </section>
 
-        <div className="space-y-4">
-          {viewMode === "shortcuts" ? (
-            shortcutGroups.length > 0 ? (
-              shortcutGroups.map((group) => (
-                <GroupedShortcutRow group={group} key={group.id} />
-              ))
-            ) : (
-              <EmptyState
-                hint="Try another app, key, action, or context."
-                title="No shortcuts found"
-              />
-            )
-          ) : filteredCompanies.length > 0 ? (
-            filteredCompanies.map((company) => (
-              <CompanyCard company={company} key={company.id} />
+      <div className="space-y-4">
+        {viewMode === "shortcuts" ? (
+          shortcutGroups.length > 0 ? (
+            shortcutGroups.map((group) => (
+              <GroupedShortcutRow group={group} key={group.id} />
             ))
           ) : (
             <EmptyState
-              hint="Try a different name or category."
-              title="No companies found"
+              hint="Try another app, key, action, or context."
+              title="No shortcuts found"
             />
-          )}
-        </div>
-      </main>
-
-      <Footer />
-    </div>
+          )
+        ) : filteredCompanies.length > 0 ? (
+          filteredCompanies.map((company) => (
+            <CompanyCard company={company} key={company.id} />
+          ))
+        ) : (
+          <EmptyState
+            hint="Try a different name or category."
+            title="No companies found"
+          />
+        )}
+      </div>
+    </>
   );
 }
 

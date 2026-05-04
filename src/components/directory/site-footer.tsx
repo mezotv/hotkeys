@@ -1,6 +1,6 @@
 import { AUTHOR_URL, GITHUB_REPO_URL } from "@/lib/constants";
 
-export function Footer() {
+export function SiteFooter() {
   return (
     <footer className="mx-auto flex w-full max-w-3xl flex-col gap-2 px-6 py-12 text-sm text-zinc-500 dark:text-zinc-400 sm:flex-row sm:items-center sm:justify-between sm:px-8">
       <p>
