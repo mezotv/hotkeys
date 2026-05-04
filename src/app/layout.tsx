@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { SiteFooter } from "@/components/directory/site-footer";
 import { SiteHeader } from "@/components/directory/site-header";
-import { SITE_URL } from "@/lib/constants";
+import { SITE_ICON_URL, SITE_URL } from "@/lib/constants";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -20,6 +20,11 @@ export const metadata: Metadata = {
   title: "hotkeys by dominik",
   description:
     "A community-maintained keyboard shortcut directory for modern apps.",
+  icons: {
+    icon: SITE_ICON_URL,
+    shortcut: SITE_ICON_URL,
+    apple: SITE_ICON_URL,
+  },
   openGraph: {
     title: "hotkeys by dominik",
     description:
