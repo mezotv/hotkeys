@@ -1,0 +1,44 @@
+[
+  {
+    "id": "notra-toggle-theme",
+    "companyId": "notra",
+    "action": "Toggle theme",
+    "description": "Switch between dark and light mode.",
+    "tags": ["theme", "appearance"],
+    "bindings": [
+      {
+        "context": "global",
+        "contextLabel": "Anywhere in Notra",
+        "keys": ["M"]
+      }
+    ]
+  },
+  {
+    "id": "resend-toggle-theme",
+    "companyId": "resend",
+    "action": "Toggle theme",
+    "description": "Switch between dark and light mode.",
+    "tags": ["theme", "appearance"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Resend dashboard",
+        "keys": ["M"]
+      }
+    ]
+  },
+  {
+    "id": "shadcn-toggle-theme",
+    "companyId": "shadcn",
+    "action": "Toggle theme",
+    "description": "Switch between dark and light mode.",
+    "tags": ["theme", "appearance"],
+    "bindings": [
+      {
+        "context": "global",
+        "contextLabel": "Anywhere on the docs",
+        "keys": ["D"]
+      }
+    ]
+  }
+]

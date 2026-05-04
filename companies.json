@@ -1,0 +1,23 @@
+[
+  {
+    "id": "notra",
+    "name": "Notra",
+    "slug": "notra",
+    "website": "https://usenotra.com",
+    "category": "Productivity"
+  },
+  {
+    "id": "resend",
+    "name": "Resend",
+    "slug": "resend",
+    "website": "https://resend.com",
+    "category": "Developer tools"
+  },
+  {
+    "id": "shadcn",
+    "name": "shadcn/ui",
+    "slug": "shadcn",
+    "website": "https://ui.shadcn.com",
+    "category": "Component library"
+  }
+]
