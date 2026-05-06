@@ -93,7 +93,7 @@ export function GroupedShortcutRow({ group }: { group: ShortcutGroup }) {
             </button>
           </div>
 
-          <KbdGroup>
+          <KbdGroup className="ml-auto justify-end">
             {uniqueChords.map((chord) => (
               <Chord key={chord.join("+")} keys={chord} />
             ))}
@@ -135,7 +135,7 @@ export function GroupedShortcutRow({ group }: { group: ShortcutGroup }) {
                         {binding.contextLabel}
                       </span>
                     </div>
-                    <div className="flex flex-wrap justify-end gap-1">
+                    <div className="ml-auto flex min-w-0 shrink-0 flex-wrap justify-end gap-1">
                       {binding.keys.map((key) => (
                         <Kbd key={`${binding.context}-${key}`}>{key}</Kbd>
                       ))}

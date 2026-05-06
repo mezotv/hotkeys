@@ -72,7 +72,7 @@ export function ShortcutDetail({ group }: { group: ShortcutGroup }) {
           </div>
         </div>
 
-        <KbdGroup>
+        <KbdGroup className="ml-auto justify-end">
           {chords.map((chord) => (
             <span
               className="inline-flex items-center gap-0.5 rounded-md bg-white shadow-sm dark:bg-zinc-900"
@@ -122,7 +122,7 @@ export function ShortcutDetail({ group }: { group: ShortcutGroup }) {
                           </p>
                         </div>
                       </div>
-                      <div className="flex flex-wrap justify-end gap-1">
+                      <div className="ml-auto flex min-w-0 shrink-0 flex-wrap justify-end gap-1">
                         {binding.keys.map((key) => (
                           <Kbd key={`${binding.context}-${key}`}>{key}</Kbd>
                         ))}

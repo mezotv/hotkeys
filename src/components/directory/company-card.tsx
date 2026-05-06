@@ -64,7 +64,7 @@ export function CompanyCard({ company }: { company: CompanyWithShortcuts }) {
                   {binding.contextLabel}
                 </p>
               </div>
-              <div className="flex flex-wrap justify-end gap-1">
+              <div className="ml-auto flex min-w-0 shrink-0 flex-wrap justify-end gap-1">
                 {binding.keys.map((key) => (
                   <Kbd key={`${binding.context}-${key}`}>{key}</Kbd>
                 ))}
