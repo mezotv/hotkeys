@@ -50,6 +50,10 @@ export function CompanyCard({ company }: { company: CompanyWithShortcuts }) {
           </div>
         </div>
 
+        <p className="line-clamp-2 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
+          {company.description}
+        </p>
+
         <ul className="space-y-2">
           {visibleShortcutRows.map(({ binding, shortcut }) => (
             <li

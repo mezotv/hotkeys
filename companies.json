@@ -4,6 +4,7 @@
     "name": "Notra",
     "slug": "notra",
     "website": "https://usenotra.com",
+    "description": "Notra turns shipped work into changelogs, launch posts, and social updates in your voice.",
     "category": "Productivity"
   },
   {
@@ -11,6 +12,7 @@
     "name": "Resend",
     "slug": "resend",
     "website": "https://resend.com",
+    "description": "The best way to reach humans instead of spam folders. Deliver transactional and marketing emails at scale.",
     "category": "Developer tools"
   },
   {
@@ -18,6 +20,7 @@
     "name": "Vercel",
     "slug": "vercel",
     "website": "https://vercel.com",
+    "description": "Vercel gives developers the frameworks, workflows, and infrastructure to build a faster, more personalized web.",
     "category": "Developer tools"
   },
   {
@@ -25,6 +28,7 @@
     "name": "Databuddy",
     "slug": "databuddy",
     "website": "https://databuddy.cc",
+    "description": "Analytics, error tracking, web vitals, feature flags, and AI insights in one script under 30 KB. No cookies, GDPR compliant. Free for small projects. Open-source Google Analytics alternative for developers.",
     "category": "Analytics"
   },
   {
@@ -32,6 +36,7 @@
     "name": "shadcn/ui",
     "slug": "shadcn",
     "website": "https://ui.shadcn.com",
+    "description": "A set of beautifully designed components that you can customize, extend, and build on. Start here then make it your own. Open Source. Open Code.",
     "category": "Component library"
   }
 ]

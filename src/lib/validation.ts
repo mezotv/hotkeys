@@ -68,6 +68,7 @@ export function assertCompanies(value: unknown): asserts value is Company[] {
     assertString(company.name, `companies[${index}].name`);
     assertString(company.slug, `companies[${index}].slug`);
     assertString(company.website, `companies[${index}].website`);
+    assertString(company.description, `companies[${index}].description`);
     assertString(company.category, `companies[${index}].category`);
 
     if (!slugPattern.test(company.slug)) {

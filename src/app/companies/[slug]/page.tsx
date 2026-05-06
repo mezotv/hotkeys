@@ -28,7 +28,7 @@ export async function generateMetadata({
 
   return {
     title: `${company.name} keyboard shortcuts`,
-    description: `Every keyboard shortcut for ${company.name}, with context, page, and keys.`,
+    description: company.description,
     alternates: { canonical: `/companies/${company.slug}` },
     icons: {
       icon: iconUrl,

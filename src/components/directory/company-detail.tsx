@@ -41,6 +41,9 @@ export function CompanyDetail({ company }: { company: CompanyWithShortcuts }) {
               {new URL(company.website).hostname.replace(/^www\./, "")}
             </a>
           </p>
+          <p className="mt-3 max-w-2xl text-sm leading-6 text-zinc-600 dark:text-zinc-400">
+            {company.description}
+          </p>
         </div>
       </header>
 

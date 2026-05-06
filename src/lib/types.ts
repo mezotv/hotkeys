@@ -3,6 +3,7 @@ export type Company = {
   name: string;
   slug: string;
   website: string;
+  description: string;
   category: string;
 };
 
