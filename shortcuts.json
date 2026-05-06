@@ -1,15 +1,73 @@
 [
   {
-    "id": "notra-toggle-theme",
+    "id": "notra-open-command-palette",
     "companyId": "notra",
-    "action": "Toggle theme",
-    "description": "Switch between dark and light mode.",
-    "tags": ["theme", "appearance"],
+    "action": "Open command palette",
+    "description": "Open the command palette to search pages, jump to tools, or ask AI.",
+    "tags": ["search", "navigation", "command palette"],
     "bindings": [
       {
-        "context": "global",
-        "contextLabel": "Anywhere in Notra",
-        "keys": ["M"]
+        "context": "dashboard",
+        "contextLabel": "Notra dashboard",
+        "keys": ["⌘", "K"],
+        "note": "The dashboard also accepts Ctrl+K on non-macOS platforms."
+      }
+    ]
+  },
+  {
+    "id": "notra-toggle-sidebar",
+    "companyId": "notra",
+    "action": "Toggle sidebar",
+    "description": "Collapse or expand the Notra dashboard sidebar.",
+    "tags": ["navigation", "sidebar", "layout"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Notra dashboard",
+        "keys": ["⌘", "B"],
+        "note": "The dashboard also accepts Ctrl+B on non-macOS platforms."
+      }
+    ]
+  },
+  {
+    "id": "notra-open-feedback",
+    "companyId": "notra",
+    "action": "Open feedback",
+    "description": "Open the feedback popover from the dashboard header.",
+    "tags": ["feedback", "support"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Notra dashboard header",
+        "keys": ["F"]
+      }
+    ]
+  },
+  {
+    "id": "notra-book-call",
+    "companyId": "notra",
+    "action": "Book a call",
+    "description": "Open the booking flow from the dashboard header.",
+    "tags": ["calendar", "support"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Notra dashboard header",
+        "keys": ["C"]
+      }
+    ]
+  },
+  {
+    "id": "notra-open-settings",
+    "companyId": "notra",
+    "action": "Open settings",
+    "description": "Open the Notra settings area.",
+    "tags": ["settings", "navigation"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Notra dashboard",
+        "keys": ["⌘", ","]
       }
     ]
   },
