@@ -2,9 +2,9 @@
   {
     "id": "notra-open-command-palette",
     "companyId": "notra",
-    "action": "Open command palette",
-    "description": "Open the command palette to search pages, jump to tools, or ask AI.",
-    "tags": ["search", "navigation", "command palette"],
+    "action": "Open spotlight menu",
+    "description": "Open the spotlight menu to search pages, jump to tools, or ask AI.",
+    "tags": ["search", "navigation", "spotlight"],
     "bindings": [
       {
         "context": "dashboard",
@@ -72,16 +72,423 @@
     ]
   },
   {
-    "id": "resend-toggle-theme",
+    "id": "resend-open-command-palette",
     "companyId": "resend",
-    "action": "Toggle theme",
-    "description": "Switch between dark and light mode.",
-    "tags": ["theme", "appearance"],
+    "action": "Open spotlight menu",
+    "description": "Open the dashboard spotlight menu for search, actions, and navigation.",
+    "tags": ["search", "navigation", "spotlight"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Resend dashboard",
+        "keys": ["⌘", "K"],
+        "note": "The dashboard also accepts Ctrl+K on non-macOS platforms."
+      }
+    ]
+  },
+  {
+    "id": "resend-go-to-emails",
+    "companyId": "resend",
+    "action": "Go to emails",
+    "description": "Navigate to the Emails page from the spotlight menu.",
+    "tags": ["navigation", "emails", "spotlight"],
+    "bindings": [
+      {
+        "context": "spotlight",
+        "contextLabel": "Resend spotlight menu",
+        "keys": ["G", "E"]
+      }
+    ]
+  },
+  {
+    "id": "resend-go-to-broadcasts",
+    "companyId": "resend",
+    "action": "Go to broadcasts",
+    "description": "Navigate to the Broadcasts page from the spotlight menu.",
+    "tags": ["navigation", "broadcasts", "spotlight"],
+    "bindings": [
+      {
+        "context": "spotlight",
+        "contextLabel": "Resend spotlight menu",
+        "keys": ["G", "B"]
+      }
+    ]
+  },
+  {
+    "id": "resend-go-to-templates",
+    "companyId": "resend",
+    "action": "Go to templates",
+    "description": "Navigate to the Templates page from the spotlight menu.",
+    "tags": ["navigation", "templates", "spotlight"],
+    "bindings": [
+      {
+        "context": "spotlight",
+        "contextLabel": "Resend spotlight menu",
+        "keys": ["G", "T"]
+      }
+    ]
+  },
+  {
+    "id": "resend-go-to-contacts",
+    "companyId": "resend",
+    "action": "Go to contacts",
+    "description": "Navigate to the Contacts page from the spotlight menu.",
+    "tags": ["navigation", "contacts", "audience", "spotlight"],
+    "bindings": [
+      {
+        "context": "spotlight",
+        "contextLabel": "Resend spotlight menu",
+        "keys": ["G", "C"]
+      }
+    ]
+  },
+  {
+    "id": "resend-go-to-properties",
+    "companyId": "resend",
+    "action": "Go to properties",
+    "description": "Navigate to the Properties page from the spotlight menu.",
+    "tags": ["navigation", "properties", "audience", "spotlight"],
+    "bindings": [
+      {
+        "context": "spotlight",
+        "contextLabel": "Resend spotlight menu",
+        "keys": ["G", "P"]
+      }
+    ]
+  },
+  {
+    "id": "resend-go-to-segments",
+    "companyId": "resend",
+    "action": "Go to segments",
+    "description": "Navigate to the Segments page from the spotlight menu.",
+    "tags": ["navigation", "segments", "audience", "spotlight"],
+    "bindings": [
+      {
+        "context": "spotlight",
+        "contextLabel": "Resend spotlight menu",
+        "keys": ["G", "S"]
+      }
+    ]
+  },
+  {
+    "id": "resend-go-to-topics",
+    "companyId": "resend",
+    "action": "Go to topics",
+    "description": "Navigate to the Topics page from the spotlight menu.",
+    "tags": ["navigation", "topics", "audience", "spotlight"],
+    "bindings": [
+      {
+        "context": "spotlight",
+        "contextLabel": "Resend spotlight menu",
+        "keys": ["G", "O"]
+      }
+    ]
+  },
+  {
+    "id": "resend-go-to-metrics",
+    "companyId": "resend",
+    "action": "Go to metrics",
+    "description": "Navigate to the Metrics page from the spotlight menu.",
+    "tags": ["navigation", "metrics", "spotlight"],
+    "bindings": [
+      {
+        "context": "spotlight",
+        "contextLabel": "Resend spotlight menu",
+        "keys": ["G", "R"]
+      }
+    ]
+  },
+  {
+    "id": "resend-go-to-domains",
+    "companyId": "resend",
+    "action": "Go to domains",
+    "description": "Navigate to the Domains page from the spotlight menu.",
+    "tags": ["navigation", "domains", "spotlight"],
+    "bindings": [
+      {
+        "context": "spotlight",
+        "contextLabel": "Resend spotlight menu",
+        "keys": ["G", "D"]
+      }
+    ]
+  },
+  {
+    "id": "resend-go-to-logs",
+    "companyId": "resend",
+    "action": "Go to logs",
+    "description": "Navigate to the Logs page from the spotlight menu.",
+    "tags": ["navigation", "logs", "spotlight"],
+    "bindings": [
+      {
+        "context": "spotlight",
+        "contextLabel": "Resend spotlight menu",
+        "keys": ["G", "L"]
+      }
+    ]
+  },
+  {
+    "id": "resend-go-to-api-keys",
+    "companyId": "resend",
+    "action": "Go to API keys",
+    "description": "Navigate to the API keys page from the spotlight menu.",
+    "tags": ["navigation", "api keys", "spotlight"],
+    "bindings": [
+      {
+        "context": "spotlight",
+        "contextLabel": "Resend spotlight menu",
+        "keys": ["G", "A"]
+      }
+    ]
+  },
+  {
+    "id": "resend-go-to-webhooks",
+    "companyId": "resend",
+    "action": "Go to webhooks",
+    "description": "Navigate to the Webhooks page from the spotlight menu.",
+    "tags": ["navigation", "webhooks", "spotlight"],
+    "bindings": [
+      {
+        "context": "spotlight",
+        "contextLabel": "Resend spotlight menu",
+        "keys": ["G", "W"]
+      }
+    ]
+  },
+  {
+    "id": "resend-go-to-profile",
+    "companyId": "resend",
+    "action": "Go to profile",
+    "description": "Navigate to the Profile page from the spotlight menu.",
+    "tags": ["navigation", "profile", "spotlight"],
+    "bindings": [
+      {
+        "context": "spotlight",
+        "contextLabel": "Resend spotlight menu",
+        "keys": ["G", "V"]
+      }
+    ]
+  },
+  {
+    "id": "resend-go-to-settings",
+    "companyId": "resend",
+    "action": "Go to settings",
+    "description": "Navigate to the Settings page from the spotlight menu.",
+    "tags": ["navigation", "settings", "spotlight"],
+    "bindings": [
+      {
+        "context": "spotlight",
+        "contextLabel": "Resend spotlight menu",
+        "keys": ["G", "Q"]
+      }
+    ]
+  },
+  {
+    "id": "resend-go-to-usage",
+    "companyId": "resend",
+    "action": "Go to usage",
+    "description": "Navigate to the Usage page from the spotlight menu.",
+    "tags": ["navigation", "usage", "settings", "spotlight"],
+    "bindings": [
+      {
+        "context": "spotlight",
+        "contextLabel": "Resend spotlight menu",
+        "keys": ["G", "U"]
+      }
+    ]
+  },
+  {
+    "id": "resend-go-to-billing",
+    "companyId": "resend",
+    "action": "Go to billing",
+    "description": "Navigate to the Billing page from the spotlight menu.",
+    "tags": ["navigation", "billing", "settings", "spotlight"],
+    "bindings": [
+      {
+        "context": "spotlight",
+        "contextLabel": "Resend spotlight menu",
+        "keys": ["G", "I"]
+      }
+    ]
+  },
+  {
+    "id": "resend-go-to-team",
+    "companyId": "resend",
+    "action": "Go to team",
+    "description": "Navigate to the Team page from the spotlight menu.",
+    "tags": ["navigation", "team", "settings", "spotlight"],
+    "bindings": [
+      {
+        "context": "spotlight",
+        "contextLabel": "Resend spotlight menu",
+        "keys": ["G", "K"]
+      }
+    ]
+  },
+  {
+    "id": "resend-go-to-smtp",
+    "companyId": "resend",
+    "action": "Go to SMTP",
+    "description": "Navigate to the SMTP page from the spotlight menu.",
+    "tags": ["navigation", "smtp", "settings", "spotlight"],
+    "bindings": [
+      {
+        "context": "spotlight",
+        "contextLabel": "Resend spotlight menu",
+        "keys": ["G", "Y"]
+      }
+    ]
+  },
+  {
+    "id": "resend-go-to-integrations",
+    "companyId": "resend",
+    "action": "Go to integrations",
+    "description": "Navigate to the Integrations page from the spotlight menu.",
+    "tags": ["navigation", "integrations", "settings", "spotlight"],
+    "bindings": [
+      {
+        "context": "spotlight",
+        "contextLabel": "Resend spotlight menu",
+        "keys": ["G", "N"]
+      }
+    ]
+  },
+  {
+    "id": "resend-go-to-unsubscribe-page",
+    "companyId": "resend",
+    "action": "Go to unsubscribe page",
+    "description": "Navigate to the Unsubscribe page from the spotlight menu.",
+    "tags": ["navigation", "unsubscribe", "settings", "spotlight"],
+    "bindings": [
+      {
+        "context": "spotlight",
+        "contextLabel": "Resend spotlight menu",
+        "keys": ["G", "Z"]
+      }
+    ]
+  },
+  {
+    "id": "resend-go-to-documents",
+    "companyId": "resend",
+    "action": "Go to documents",
+    "description": "Navigate to the Documents page from the spotlight menu.",
+    "tags": ["navigation", "documents", "settings", "spotlight"],
+    "bindings": [
+      {
+        "context": "spotlight",
+        "contextLabel": "Resend spotlight menu",
+        "keys": ["G", "J"]
+      }
+    ]
+  },
+  {
+    "id": "resend-go-to-exports",
+    "companyId": "resend",
+    "action": "Go to exports",
+    "description": "Navigate to the Exports page from the spotlight menu.",
+    "tags": ["navigation", "exports", "settings", "spotlight"],
+    "bindings": [
+      {
+        "context": "spotlight",
+        "contextLabel": "Resend spotlight menu",
+        "keys": ["G", "X"]
+      }
+    ]
+  },
+  {
+    "id": "resend-go-to-automations",
+    "companyId": "resend",
+    "action": "Go to automations",
+    "description": "Navigate to the Automations page from the spotlight menu.",
+    "tags": ["navigation", "automations", "spotlight"],
+    "bindings": [
+      {
+        "context": "spotlight",
+        "contextLabel": "Resend spotlight menu",
+        "keys": ["G", "F"]
+      }
+    ]
+  },
+  {
+    "id": "resend-go-to-help",
+    "companyId": "resend",
+    "action": "Go to help",
+    "description": "Navigate to the Help page from the spotlight menu.",
+    "tags": ["navigation", "help", "spotlight"],
+    "bindings": [
+      {
+        "context": "spotlight",
+        "contextLabel": "Resend spotlight menu",
+        "keys": ["G", "H"]
+      }
+    ]
+  },
+  {
+    "id": "resend-open-api-docs",
+    "companyId": "resend",
+    "action": "Open API docs",
+    "description": "Open the relevant API documentation from any dashboard page.",
+    "tags": ["docs", "api", "help"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Resend dashboard",
+        "keys": ["A"]
+      }
+    ]
+  },
+  {
+    "id": "resend-toggle-mode",
+    "companyId": "resend",
+    "action": "Toggle mode",
+    "description": "Switch between light and dark display modes.",
+    "tags": ["theme", "appearance", "mode"],
     "bindings": [
       {
         "context": "dashboard",
         "contextLabel": "Resend dashboard",
         "keys": ["M"]
+      }
+    ]
+  },
+  {
+    "id": "resend-open-feedback",
+    "companyId": "resend",
+    "action": "Open feedback",
+    "description": "Open the feedback dialog from the dashboard header.",
+    "tags": ["feedback", "support"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Resend dashboard header",
+        "keys": ["F"]
+      }
+    ]
+  },
+  {
+    "id": "resend-confirm-dialog",
+    "companyId": "resend",
+    "action": "Confirm dialog",
+    "description": "Approve or submit the active confirmation dialog.",
+    "tags": ["dialog", "confirmation", "form"],
+    "bindings": [
+      {
+        "context": "dialog",
+        "contextLabel": "Resend dialogs",
+        "keys": ["⌘", "Enter"]
+      }
+    ]
+  },
+  {
+    "id": "resend-cancel-dialog",
+    "companyId": "resend",
+    "action": "Cancel dialog",
+    "description": "Cancel or close the active dialog.",
+    "tags": ["dialog", "cancel", "escape"],
+    "bindings": [
+      {
+        "context": "dialog",
+        "contextLabel": "Resend dialogs",
+        "keys": ["Esc"]
       }
     ]
   },
