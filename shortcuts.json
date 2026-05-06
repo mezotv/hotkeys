@@ -568,6 +568,34 @@
     ]
   },
   {
+    "id": "open-spotlight-menu",
+    "companyId": "shadcn",
+    "action": "Open spotlight menu",
+    "description": "Open the shadcn/ui docs spotlight menu for search, actions, and navigation.",
+    "tags": ["search", "navigation", "spotlight"],
+    "bindings": [
+      {
+        "context": "docs",
+        "contextLabel": "shadcn/ui docs",
+        "keys": ["⌘", "K"]
+      }
+    ]
+  },
+  {
+    "id": "toggle-sidebar",
+    "companyId": "shadcn",
+    "action": "Toggle sidebar",
+    "description": "Collapse or expand the shadcn/ui docs sidebar.",
+    "tags": ["navigation", "sidebar", "layout"],
+    "bindings": [
+      {
+        "context": "docs",
+        "contextLabel": "shadcn/ui docs",
+        "keys": ["⌘", "B"]
+      }
+    ]
+  },
+  {
     "id": "toggle-mode",
     "companyId": "shadcn",
     "action": "Toggle mode",
