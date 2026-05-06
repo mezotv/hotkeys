@@ -678,5 +678,19 @@
         "keys": ["D"]
       }
     ]
+  },
+  {
+    "id": "run-functions",
+    "companyId": "convex",
+    "action": "Run functions",
+    "description": "Run functions from the Convex dashboard.",
+    "tags": ["functions", "dashboard", "developer-tools"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Convex dashboard",
+        "keys": ["⌃", "`"]
+      }
+    ]
   }
 ]
