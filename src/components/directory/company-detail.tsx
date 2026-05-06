@@ -1,12 +1,26 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Kbd } from "@/components/ui/kbd";
 import type { CompanyWithShortcuts } from "@/lib/types";
 import { getCompanyIconUrl } from "@/utils/icons";
 
+const INITIAL_SHORTCUT_COUNT = 3;
+
 export function CompanyDetail({ company }: { company: CompanyWithShortcuts }) {
+  const [showAllShortcuts, setShowAllShortcuts] = useState(false);
+  const hiddenShortcutCount = Math.max(
+    company.shortcuts.length - INITIAL_SHORTCUT_COUNT,
+    0,
+  );
+  const visibleShortcuts = showAllShortcuts
+    ? company.shortcuts
+    : company.shortcuts.slice(0, INITIAL_SHORTCUT_COUNT);
+
   return (
     <article className="py-12 sm:py-16">
       <Link
@@ -56,55 +70,70 @@ export function CompanyDetail({ company }: { company: CompanyWithShortcuts }) {
             </CardContent>
           </Card>
         ) : (
-          <ul className="mt-3 space-y-3">
-            {company.shortcuts.map((shortcut) => (
-              <li key={shortcut.id}>
-                <Card>
-                  <CardContent className="space-y-3">
-                    <div className="flex items-start justify-between gap-3">
-                      <div className="min-w-0">
-                        <Link
-                          className="text-base font-semibold tracking-tight text-zinc-950 transition hover:text-zinc-700 dark:text-zinc-50 dark:hover:text-zinc-300"
-                          href={`/shortcuts/${shortcut.id}`}
-                        >
-                          {shortcut.action}
-                        </Link>
-                        <p className="mt-1 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
-                          {shortcut.description}
-                        </p>
+          <>
+            <ul className="mt-3 space-y-3">
+              {visibleShortcuts.map((shortcut) => (
+                <li key={shortcut.id}>
+                  <Card>
+                    <CardContent className="space-y-3">
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="min-w-0">
+                          <Link
+                            className="text-base font-semibold tracking-tight text-zinc-950 transition hover:text-zinc-700 dark:text-zinc-50 dark:hover:text-zinc-300"
+                            href={`/shortcuts/${shortcut.id}`}
+                          >
+                            {shortcut.action}
+                          </Link>
+                          <p className="mt-1 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
+                            {shortcut.description}
+                          </p>
+                        </div>
+                        <div className="flex flex-wrap gap-1.5">
+                          {shortcut.tags.map((tag) => (
+                            <Badge key={tag}>{tag}</Badge>
+                          ))}
+                        </div>
                       </div>
-                      <div className="flex flex-wrap gap-1.5">
-                        {shortcut.tags.map((tag) => (
-                          <Badge key={tag}>{tag}</Badge>
-                        ))}
-                      </div>
-                    </div>
 
-                    <ul className="space-y-2">
-                      {shortcut.bindings.map((binding) => (
-                        <li
-                          className="flex items-center justify-between gap-3 rounded-xl bg-zinc-50 px-3 py-2 dark:bg-black"
-                          key={`${shortcut.id}-${binding.context}`}
-                        >
-                          <div className="min-w-0 text-xs text-zinc-500 dark:text-zinc-400">
-                            {binding.contextLabel}
-                            {binding.note ? (
-                              <p className="mt-1 leading-5">{binding.note}</p>
-                            ) : null}
-                          </div>
-                          <div className="flex flex-wrap justify-end gap-1">
-                            {binding.keys.map((key) => (
-                              <Kbd key={`${binding.context}-${key}`}>{key}</Kbd>
-                            ))}
-                          </div>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              </li>
-            ))}
-          </ul>
+                      <ul className="space-y-2">
+                        {shortcut.bindings.map((binding) => (
+                          <li
+                            className="flex items-center justify-between gap-3 rounded-xl bg-zinc-50 px-3 py-2 dark:bg-black"
+                            key={`${shortcut.id}-${binding.context}`}
+                          >
+                            <div className="min-w-0 text-xs text-zinc-500 dark:text-zinc-400">
+                              {binding.contextLabel}
+                              {binding.note ? (
+                                <p className="mt-1 leading-5">{binding.note}</p>
+                              ) : null}
+                            </div>
+                            <div className="flex flex-wrap justify-end gap-1">
+                              {binding.keys.map((key) => (
+                                <Kbd key={`${binding.context}-${key}`}>
+                                  {key}
+                                </Kbd>
+                              ))}
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </li>
+              ))}
+            </ul>
+
+            {showAllShortcuts || hiddenShortcutCount === 0 ? null : (
+              <button
+                className="mt-4 w-full rounded-2xl border border-black/[.08] bg-white px-4 py-3 text-sm font-medium text-zinc-700 transition hover:border-black/[.14] hover:text-zinc-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/[.08] dark:border-white/[.10] dark:bg-zinc-950 dark:text-zinc-300 dark:hover:border-white/[.18] dark:hover:text-zinc-50 dark:focus-visible:ring-white/[.12]"
+                onClick={() => setShowAllShortcuts(true)}
+                type="button"
+              >
+                Load {hiddenShortcutCount} more shortcut
+                {hiddenShortcutCount === 1 ? "" : "s"}
+              </button>
+            )}
+          </>
         )}
       </section>
     </article>
