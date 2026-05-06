@@ -1,5 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
+import { HotkeyHighlightProvider } from "@/components/directory/hotkey-highlight";
+import { ShortcutDetailEntry } from "@/components/directory/shortcut-detail-entry";
 import {
   Avatar,
   AvatarFallback,
@@ -7,9 +8,9 @@ import {
   AvatarImage,
 } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
 import { Kbd, KbdGroup } from "@/components/ui/kbd";
 import type { ShortcutGroup } from "@/lib/types";
+import { bindingToRegistration } from "@/utils/hotkey-registration";
 import { getCompanyIconUrl } from "@/utils/icons";
 
 function uniqueChords(group: ShortcutGroup) {
@@ -31,6 +32,14 @@ function uniqueChords(group: ShortcutGroup) {
 export function ShortcutDetail({ group }: { group: ShortcutGroup }) {
   const chords = uniqueChords(group);
   const appCount = group.entries.length;
+  const registrations = group.entries.flatMap(({ company, shortcut }) =>
+    shortcut.bindings.map((binding) =>
+      bindingToRegistration(
+        `${company.id}-${shortcut.id}-${binding.context}`,
+        binding,
+      ),
+    ),
+  );
 
   return (
     <article className="pt-6 pb-12 sm:pt-8 sm:pb-16">
@@ -93,52 +102,25 @@ export function ShortcutDetail({ group }: { group: ShortcutGroup }) {
           Used by
         </h2>
 
-        <ul className="mt-3 space-y-3">
-          {group.entries.flatMap(({ company, shortcut }) =>
-            shortcut.bindings.map((binding) => (
-              <li key={`${company.id}-${shortcut.id}-${binding.context}`}>
-                <Card>
-                  <CardContent>
-                    <div className="flex items-center justify-between gap-3">
-                      <div className="flex min-w-0 items-center gap-3">
-                        <Image
-                          alt=""
-                          aria-hidden="true"
-                          className="rounded-md"
-                          height={28}
-                          src={getCompanyIconUrl(company)}
-                          unoptimized
-                          width={28}
-                        />
-                        <div className="min-w-0">
-                          <Link
-                            className="text-sm font-semibold tracking-tight text-zinc-950 transition hover:text-zinc-700 dark:text-zinc-50 dark:hover:text-zinc-300"
-                            href={`/companies/${company.slug}`}
-                          >
-                            {company.name}
-                          </Link>
-                          <p className="mt-0.5 text-xs text-zinc-500 dark:text-zinc-400">
-                            {binding.contextLabel}
-                          </p>
-                        </div>
-                      </div>
-                      <div className="ml-auto flex min-w-0 shrink-0 flex-wrap justify-end gap-1">
-                        {binding.keys.map((key) => (
-                          <Kbd key={`${binding.context}-${key}`}>{key}</Kbd>
-                        ))}
-                      </div>
-                    </div>
-                    {binding.note ? (
-                      <p className="mt-3 text-xs leading-5 text-zinc-500 dark:text-zinc-400">
-                        {binding.note}
-                      </p>
-                    ) : null}
-                  </CardContent>
-                </Card>
-              </li>
-            )),
-          )}
-        </ul>
+        <HotkeyHighlightProvider registrations={registrations}>
+          <ul className="mt-3 space-y-3">
+            {group.entries.flatMap(({ company, shortcut }) =>
+              shortcut.bindings.map((binding) => {
+                const highlightId = `${company.id}-${shortcut.id}-${binding.context}`;
+
+                return (
+                  <li key={highlightId}>
+                    <ShortcutDetailEntry
+                      binding={binding}
+                      company={company}
+                      highlightId={highlightId}
+                    />
+                  </li>
+                );
+              }),
+            )}
+          </ul>
+        </HotkeyHighlightProvider>
       </section>
     </article>
   );

@@ -609,7 +609,7 @@
       }
     ]
   },
-    {
+  {
     "id": "toggle-sidebar",
     "companyId": "autumn",
     "action": "Toggle sidebar",
