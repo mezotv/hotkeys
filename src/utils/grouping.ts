@@ -1,11 +1,10 @@
 import type { ShortcutEntry, ShortcutGroup } from "@/lib/types";
-import { slugify } from "./slug";
 
 export function groupHotkeys(hotkeys: ShortcutEntry[]): ShortcutGroup[] {
   const groups = new Map<string, ShortcutGroup>();
 
   for (const entry of hotkeys) {
-    const id = slugify(entry.shortcut.action);
+    const id = entry.shortcut.id;
 
     let group = groups.get(id);
 

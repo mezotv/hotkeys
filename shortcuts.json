@@ -1,6 +1,6 @@
 [
   {
-    "id": "notra-open-command-palette",
+    "id": "open-spotlight-menu",
     "companyId": "notra",
     "action": "Open spotlight menu",
     "description": "Open the spotlight menu to search pages, jump to tools, or ask AI.",
@@ -15,7 +15,7 @@
     ]
   },
   {
-    "id": "notra-toggle-sidebar",
+    "id": "toggle-sidebar",
     "companyId": "notra",
     "action": "Toggle sidebar",
     "description": "Collapse or expand the Notra dashboard sidebar.",
@@ -30,7 +30,7 @@
     ]
   },
   {
-    "id": "notra-open-feedback",
+    "id": "open-feedback",
     "companyId": "notra",
     "action": "Open feedback",
     "description": "Open the feedback popover from the dashboard header.",
@@ -44,7 +44,7 @@
     ]
   },
   {
-    "id": "notra-book-call",
+    "id": "book-call",
     "companyId": "notra",
     "action": "Book a call",
     "description": "Open the booking flow from the dashboard header.",
@@ -58,7 +58,7 @@
     ]
   },
   {
-    "id": "notra-open-settings",
+    "id": "open-settings",
     "companyId": "notra",
     "action": "Open settings",
     "description": "Open the Notra settings area.",
@@ -72,7 +72,7 @@
     ]
   },
   {
-    "id": "resend-open-command-palette",
+    "id": "open-spotlight-menu",
     "companyId": "resend",
     "action": "Open spotlight menu",
     "description": "Open the dashboard spotlight menu for search, actions, and navigation.",
@@ -87,7 +87,7 @@
     ]
   },
   {
-    "id": "resend-go-to-emails",
+    "id": "go-to-emails",
     "companyId": "resend",
     "action": "Go to emails",
     "description": "Navigate to the Emails page from the spotlight menu.",
@@ -101,7 +101,7 @@
     ]
   },
   {
-    "id": "resend-go-to-broadcasts",
+    "id": "go-to-broadcasts",
     "companyId": "resend",
     "action": "Go to broadcasts",
     "description": "Navigate to the Broadcasts page from the spotlight menu.",
@@ -115,7 +115,7 @@
     ]
   },
   {
-    "id": "resend-go-to-templates",
+    "id": "go-to-templates",
     "companyId": "resend",
     "action": "Go to templates",
     "description": "Navigate to the Templates page from the spotlight menu.",
@@ -129,7 +129,7 @@
     ]
   },
   {
-    "id": "resend-go-to-contacts",
+    "id": "go-to-contacts",
     "companyId": "resend",
     "action": "Go to contacts",
     "description": "Navigate to the Contacts page from the spotlight menu.",
@@ -143,7 +143,7 @@
     ]
   },
   {
-    "id": "resend-go-to-properties",
+    "id": "go-to-properties",
     "companyId": "resend",
     "action": "Go to properties",
     "description": "Navigate to the Properties page from the spotlight menu.",
@@ -157,7 +157,7 @@
     ]
   },
   {
-    "id": "resend-go-to-segments",
+    "id": "go-to-segments",
     "companyId": "resend",
     "action": "Go to segments",
     "description": "Navigate to the Segments page from the spotlight menu.",
@@ -171,7 +171,7 @@
     ]
   },
   {
-    "id": "resend-go-to-topics",
+    "id": "go-to-topics",
     "companyId": "resend",
     "action": "Go to topics",
     "description": "Navigate to the Topics page from the spotlight menu.",
@@ -185,7 +185,7 @@
     ]
   },
   {
-    "id": "resend-go-to-metrics",
+    "id": "go-to-metrics",
     "companyId": "resend",
     "action": "Go to metrics",
     "description": "Navigate to the Metrics page from the spotlight menu.",
@@ -199,7 +199,7 @@
     ]
   },
   {
-    "id": "resend-go-to-domains",
+    "id": "go-to-domains",
     "companyId": "resend",
     "action": "Go to domains",
     "description": "Navigate to the Domains page from the spotlight menu.",
@@ -213,7 +213,7 @@
     ]
   },
   {
-    "id": "resend-go-to-logs",
+    "id": "go-to-logs",
     "companyId": "resend",
     "action": "Go to logs",
     "description": "Navigate to the Logs page from the spotlight menu.",
@@ -227,7 +227,7 @@
     ]
   },
   {
-    "id": "resend-go-to-api-keys",
+    "id": "go-to-api-keys",
     "companyId": "resend",
     "action": "Go to API keys",
     "description": "Navigate to the API keys page from the spotlight menu.",
@@ -241,7 +241,7 @@
     ]
   },
   {
-    "id": "resend-go-to-webhooks",
+    "id": "go-to-webhooks",
     "companyId": "resend",
     "action": "Go to webhooks",
     "description": "Navigate to the Webhooks page from the spotlight menu.",
@@ -255,7 +255,7 @@
     ]
   },
   {
-    "id": "resend-go-to-profile",
+    "id": "go-to-profile",
     "companyId": "resend",
     "action": "Go to profile",
     "description": "Navigate to the Profile page from the spotlight menu.",
@@ -269,7 +269,7 @@
     ]
   },
   {
-    "id": "resend-go-to-settings",
+    "id": "go-to-settings",
     "companyId": "resend",
     "action": "Go to settings",
     "description": "Navigate to the Settings page from the spotlight menu.",
@@ -283,7 +283,7 @@
     ]
   },
   {
-    "id": "resend-go-to-usage",
+    "id": "go-to-usage",
     "companyId": "resend",
     "action": "Go to usage",
     "description": "Navigate to the Usage page from the spotlight menu.",
@@ -297,7 +297,7 @@
     ]
   },
   {
-    "id": "resend-go-to-billing",
+    "id": "go-to-billing",
     "companyId": "resend",
     "action": "Go to billing",
     "description": "Navigate to the Billing page from the spotlight menu.",
@@ -311,7 +311,7 @@
     ]
   },
   {
-    "id": "resend-go-to-team",
+    "id": "go-to-team",
     "companyId": "resend",
     "action": "Go to team",
     "description": "Navigate to the Team page from the spotlight menu.",
@@ -325,7 +325,7 @@
     ]
   },
   {
-    "id": "resend-go-to-smtp",
+    "id": "go-to-smtp",
     "companyId": "resend",
     "action": "Go to SMTP",
     "description": "Navigate to the SMTP page from the spotlight menu.",
@@ -339,7 +339,7 @@
     ]
   },
   {
-    "id": "resend-go-to-integrations",
+    "id": "go-to-integrations",
     "companyId": "resend",
     "action": "Go to integrations",
     "description": "Navigate to the Integrations page from the spotlight menu.",
@@ -353,7 +353,7 @@
     ]
   },
   {
-    "id": "resend-go-to-unsubscribe-page",
+    "id": "go-to-unsubscribe-page",
     "companyId": "resend",
     "action": "Go to unsubscribe page",
     "description": "Navigate to the Unsubscribe page from the spotlight menu.",
@@ -367,7 +367,7 @@
     ]
   },
   {
-    "id": "resend-go-to-documents",
+    "id": "go-to-documents",
     "companyId": "resend",
     "action": "Go to documents",
     "description": "Navigate to the Documents page from the spotlight menu.",
@@ -381,7 +381,7 @@
     ]
   },
   {
-    "id": "resend-go-to-exports",
+    "id": "go-to-exports",
     "companyId": "resend",
     "action": "Go to exports",
     "description": "Navigate to the Exports page from the spotlight menu.",
@@ -395,7 +395,7 @@
     ]
   },
   {
-    "id": "resend-go-to-automations",
+    "id": "go-to-automations",
     "companyId": "resend",
     "action": "Go to automations",
     "description": "Navigate to the Automations page from the spotlight menu.",
@@ -409,7 +409,7 @@
     ]
   },
   {
-    "id": "resend-go-to-help",
+    "id": "go-to-help",
     "companyId": "resend",
     "action": "Go to help",
     "description": "Navigate to the Help page from the spotlight menu.",
@@ -423,7 +423,7 @@
     ]
   },
   {
-    "id": "resend-open-api-docs",
+    "id": "open-api-docs",
     "companyId": "resend",
     "action": "Open API docs",
     "description": "Open the relevant API documentation from any dashboard page.",
@@ -437,7 +437,7 @@
     ]
   },
   {
-    "id": "resend-toggle-mode",
+    "id": "toggle-mode",
     "companyId": "resend",
     "action": "Toggle mode",
     "description": "Switch between light and dark display modes.",
@@ -451,7 +451,7 @@
     ]
   },
   {
-    "id": "resend-open-feedback",
+    "id": "open-feedback",
     "companyId": "resend",
     "action": "Open feedback",
     "description": "Open the feedback dialog from the dashboard header.",
@@ -465,7 +465,7 @@
     ]
   },
   {
-    "id": "resend-confirm-dialog",
+    "id": "confirm-dialog",
     "companyId": "resend",
     "action": "Confirm dialog",
     "description": "Approve or submit the active confirmation dialog.",
@@ -479,7 +479,7 @@
     ]
   },
   {
-    "id": "resend-cancel-dialog",
+    "id": "cancel-dialog",
     "companyId": "resend",
     "action": "Cancel dialog",
     "description": "Cancel or close the active dialog.",
@@ -493,11 +493,11 @@
     ]
   },
   {
-    "id": "shadcn-toggle-theme",
+    "id": "toggle-mode",
     "companyId": "shadcn",
-    "action": "Toggle theme",
-    "description": "Switch between dark and light mode.",
-    "tags": ["theme", "appearance"],
+    "action": "Toggle mode",
+    "description": "Switch between light and dark display modes.",
+    "tags": ["theme", "appearance", "mode"],
     "bindings": [
       {
         "context": "global",

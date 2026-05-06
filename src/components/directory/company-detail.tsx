@@ -5,7 +5,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Kbd } from "@/components/ui/kbd";
 import type { CompanyWithShortcuts } from "@/lib/types";
 import { getCompanyIconUrl } from "@/utils/icons";
-import { slugify } from "@/utils/slug";
 
 export function CompanyDetail({ company }: { company: CompanyWithShortcuts }) {
   return (
@@ -66,7 +65,7 @@ export function CompanyDetail({ company }: { company: CompanyWithShortcuts }) {
                       <div className="min-w-0">
                         <Link
                           className="text-base font-semibold tracking-tight text-zinc-950 transition hover:text-zinc-700 dark:text-zinc-50 dark:hover:text-zinc-300"
-                          href={`/shortcuts/${slugify(shortcut.action)}`}
+                          href={`/shortcuts/${shortcut.id}`}
                         >
                           {shortcut.action}
                         </Link>

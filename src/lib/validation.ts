@@ -37,6 +37,22 @@ function assertUniqueIds(items: { id: string }[], label: string) {
   }
 }
 
+function assertUniqueShortcutIds(shortcuts: Shortcut[]) {
+  const seen = new Set<string>();
+
+  for (const shortcut of shortcuts) {
+    const key = `${shortcut.companyId}:${shortcut.id}`;
+
+    if (seen.has(key)) {
+      throw new Error(
+        `Duplicate shortcut id for company "${shortcut.companyId}": ${shortcut.id}`,
+      );
+    }
+
+    seen.add(key);
+  }
+}
+
 export function assertCompanies(value: unknown): asserts value is Company[] {
   if (!Array.isArray(value)) {
     throw new Error("companies.json must be an array");
@@ -73,6 +89,10 @@ export function assertShortcuts(value: unknown): asserts value is Shortcut[] {
 
     assertString(shortcut.id, `shortcuts[${shortcutIndex}].id`);
     assertString(shortcut.companyId, `shortcuts[${shortcutIndex}].companyId`);
+
+    if (!slugPattern.test(shortcut.id)) {
+      throw new Error(`shortcuts[${shortcutIndex}].id must be a slug`);
+    }
     assertString(shortcut.action, `shortcuts[${shortcutIndex}].action`);
     assertString(
       shortcut.description,
@@ -122,7 +142,7 @@ export function assertShortcuts(value: unknown): asserts value is Shortcut[] {
     }
   }
 
-  assertUniqueIds(value, "shortcut");
+  assertUniqueShortcutIds(value);
 }
 
 export function validateDirectoryData(companies: unknown, shortcuts: unknown) {
