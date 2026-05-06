@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useId, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Kbd } from "@/components/ui/kbd";
 import type { CompanyWithShortcuts } from "@/lib/types";
@@ -11,6 +11,7 @@ import { getCompanyIconUrl } from "@/utils/icons";
 const INITIAL_SHORTCUT_ROW_COUNT = 3;
 
 export function CompanyCard({ company }: { company: CompanyWithShortcuts }) {
+  const shortcutRowId = useId();
   const [showAllShortcuts, setShowAllShortcuts] = useState(false);
   const shortcutRows = company.shortcuts.flatMap((shortcut) =>
     shortcut.bindings.map((binding) => ({ binding, shortcut })),
@@ -55,10 +56,10 @@ export function CompanyCard({ company }: { company: CompanyWithShortcuts }) {
         </p>
 
         <ul className="space-y-2">
-          {visibleShortcutRows.map(({ binding, shortcut }) => (
+          {visibleShortcutRows.map(({ binding, shortcut }, rowIndex) => (
             <li
               className="flex items-center justify-between gap-3 rounded-xl bg-zinc-50 px-3 py-2 dark:bg-black"
-              key={`${shortcut.id}-${binding.context}`}
+              key={`${shortcutRowId}-${shortcut.id}-${binding.context}-${rowIndex}`}
             >
               <div className="min-w-0">
                 <p className="truncate text-sm font-medium text-zinc-950 dark:text-zinc-50">
