@@ -77,7 +77,7 @@ export function DirectoryShell({
 
   return (
     <>
-      <section className="py-16 sm:py-24">
+      <section className="pt-8 pb-16 sm:pt-12 sm:pb-24">
         <h1 className="max-w-2xl text-4xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50 sm:text-6xl">
           Hotkeys, by action.
         </h1>

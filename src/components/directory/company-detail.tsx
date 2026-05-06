@@ -8,7 +8,7 @@ import { getCompanyIconUrl } from "@/utils/icons";
 
 export function CompanyDetail({ company }: { company: CompanyWithShortcuts }) {
   return (
-    <article className="py-12 sm:py-16">
+    <article className="pt-6 pb-12 sm:pt-8 sm:pb-16">
       <Link
         className="text-sm text-zinc-500 transition hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50"
         href="/"
