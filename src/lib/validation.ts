@@ -1,6 +1,7 @@
 import type { Company, Shortcut } from "./types";
 
 const slugPattern = /^[a-z][a-zA-Z0-9]*$/;
+const shortcutIdPattern = /^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$/;
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -90,7 +91,7 @@ export function assertShortcuts(value: unknown): asserts value is Shortcut[] {
     assertString(shortcut.id, `shortcuts[${shortcutIndex}].id`);
     assertString(shortcut.companyId, `shortcuts[${shortcutIndex}].companyId`);
 
-    if (!slugPattern.test(shortcut.id)) {
+    if (!shortcutIdPattern.test(shortcut.id)) {
       throw new Error(`shortcuts[${shortcutIndex}].id must be a slug`);
     }
     assertString(shortcut.action, `shortcuts[${shortcutIndex}].action`);
