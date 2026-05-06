@@ -41,8 +41,10 @@ export function HotkeyHighlightProvider({
     {},
   );
   const sequenceProgressRef = useRef<Record<string, number>>({});
+  const partialHoldUntilRef = useRef(0);
 
   const activate = useCallback((ids: string[]) => {
+    partialHoldUntilRef.current = 0;
     setPartialMatches({});
     setActiveIds((current) => Array.from(new Set([...current, ...ids])));
     window.setTimeout(
@@ -53,6 +55,17 @@ export function HotkeyHighlightProvider({
       700,
     );
   }, []);
+
+  const completeSequence = useCallback(
+    (ids: string[], finalKeyIndex: number) => {
+      partialHoldUntilRef.current = Date.now() + 300;
+      setPartialMatches(
+        Object.fromEntries(ids.map((id) => [id, finalKeyIndex])),
+      );
+      window.setTimeout(() => activate(ids), 300);
+    },
+    [activate],
+  );
 
   const hotkeyDefinitions = useMemo(() => {
     const groups = new Map<
@@ -114,14 +127,14 @@ export function HotkeyHighlightProvider({
     return Array.from(groups.values()).map((group) => ({
       callback: (event: KeyboardEvent) => {
         event.preventDefault();
-        activate(group.ids);
+        completeSequence(group.ids, group.sequence.length - 1);
       },
       options: {
         meta: { name: `Highlight ${group.ids.join(", ")}` },
       },
       sequence: group.sequence,
     }));
-  }, [activate, registrations]);
+  }, [completeSequence, registrations]);
 
   useHotkeys(hotkeyDefinitions, {
     ignoreInputs: true,
@@ -143,6 +156,8 @@ export function HotkeyHighlightProvider({
       }
 
       const completedIds: string[] = [];
+      const completedSequenceIds: string[] = [];
+      let completedSequenceFinalKeyIndex = -1;
       const matches: Record<string, number> = {};
       const nextSequenceProgress: Record<string, number> = {};
 
@@ -158,7 +173,8 @@ export function HotkeyHighlightProvider({
 
           if (matchesDisplayKey(registration.keys[currentIndex], event)) {
             if (currentIndex === registration.keys.length - 1) {
-              completedIds.push(registration.id);
+              completedSequenceIds.push(registration.id);
+              completedSequenceFinalKeyIndex = currentIndex;
             } else {
               matches[registration.id] = currentIndex;
               nextSequenceProgress[registration.id] = currentIndex + 1;
@@ -170,6 +186,15 @@ export function HotkeyHighlightProvider({
           if (matchesDisplayKey(registration.keys[0], event)) {
             matches[registration.id] = 0;
             nextSequenceProgress[registration.id] = 1;
+            continue;
+          }
+
+          const matchingSequenceKeyIndex = registration.keys.findIndex((key) =>
+            matchesDisplayKey(key, event),
+          );
+
+          if (matchingSequenceKeyIndex !== -1) {
+            matches[registration.id] = matchingSequenceKeyIndex;
           }
 
           continue;
@@ -186,14 +211,24 @@ export function HotkeyHighlightProvider({
 
       sequenceProgressRef.current = nextSequenceProgress;
 
+      if (completedSequenceIds.length > 0) {
+        completeSequence(completedSequenceIds, completedSequenceFinalKeyIndex);
+      }
+
       if (completedIds.length > 0) {
         activate(completedIds);
-      } else {
+      } else if (completedSequenceIds.length === 0) {
         setPartialMatches(matches);
       }
     };
 
-    const handleKeyUp = () => setPartialMatches({});
+    const handleKeyUp = () => {
+      if (Date.now() < partialHoldUntilRef.current) {
+        return;
+      }
+
+      setPartialMatches({});
+    };
 
     document.addEventListener("keydown", handleKeyDown);
     document.addEventListener("keyup", handleKeyUp);
@@ -202,7 +237,7 @@ export function HotkeyHighlightProvider({
       document.removeEventListener("keydown", handleKeyDown);
       document.removeEventListener("keyup", handleKeyUp);
     };
-  }, [activate, registrations]);
+  }, [activate, completeSequence, registrations]);
 
   return (
     <HotkeyHighlightContext.Provider value={{ activeIds, partialMatches }}>
