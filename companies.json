@@ -36,7 +36,7 @@
     "name": "Autumn",
     "slug": "autumn",
     "website": "https://useautumn.com",
-    "description": "Autumn.",
+    "description": "The drop-in billing layer for AI startups. Stop rebuilding usage limits, credit systems, and subscription logic. Autumn keeps webhooks, payments, and usage perfectly in-sync.",
     "category": "Payments"
   },
   {
