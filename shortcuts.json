@@ -162,6 +162,48 @@
     ]
   },
   {
+    "id": "open-spotlight-menu",
+    "companyId": "databuddy",
+    "action": "Open spotlight menu",
+    "description": "Open the Databuddy dashboard spotlight menu for search, actions, and navigation.",
+    "tags": ["search", "navigation", "spotlight"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Databuddy dashboard",
+        "keys": ["⌘", "K"]
+      }
+    ]
+  },
+  {
+    "id": "zoom-to-range",
+    "companyId": "databuddy",
+    "action": "Zoom to range",
+    "description": "Zoom the dashboard chart to the selected date range.",
+    "tags": ["chart", "analytics", "annotation"],
+    "bindings": [
+      {
+        "context": "dashboardChart",
+        "contextLabel": "Databuddy dashboard chart",
+        "keys": ["Z"]
+      }
+    ]
+  },
+  {
+    "id": "add-annotation",
+    "companyId": "databuddy",
+    "action": "Add annotation",
+    "description": "Add an annotation to the selected range on the dashboard chart.",
+    "tags": ["chart", "analytics", "annotation"],
+    "bindings": [
+      {
+        "context": "dashboardChart",
+        "contextLabel": "Databuddy dashboard chart",
+        "keys": ["A"]
+      }
+    ]
+  },
+  {
     "id": "go-to-emails",
     "companyId": "resend",
     "action": "Go to emails",

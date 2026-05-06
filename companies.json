@@ -21,6 +21,13 @@
     "category": "Developer tools"
   },
   {
+    "id": "databuddy",
+    "name": "Databuddy",
+    "slug": "databuddy",
+    "website": "https://databuddy.cc",
+    "category": "Analytics"
+  },
+  {
     "id": "shadcn",
     "name": "shadcn/ui",
     "slug": "shadcn",
