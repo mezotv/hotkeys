@@ -609,6 +609,34 @@
       }
     ]
   },
+    {
+    "id": "toggle-sidebar",
+    "companyId": "autumn",
+    "action": "Toggle sidebar",
+    "description": "Collapse or expand the Autumn sidebar.",
+    "tags": ["navigation", "sidebar", "layout"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Autumn dashboard",
+        "keys": ["⌘", "B"]
+      }
+    ]
+  },
+  {
+    "id": "open-spotlight-menu",
+    "companyId": "autumn",
+    "action": "Open spotlight menu",
+    "description": "Open the Autumn spotlight menu for search and navigation.",
+    "tags": ["search", "navigation", "spotlight"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Autumn dashboard",
+        "keys": ["⌘", "K"]
+      }
+    ]
+  },
   {
     "id": "open-spotlight-menu",
     "companyId": "shadcn",

@@ -32,6 +32,14 @@
     "category": "Analytics"
   },
   {
+    "id": "autumn",
+    "name": "Autumn",
+    "slug": "autumn",
+    "website": "https://useautumn.com",
+    "description": "Autumn.",
+    "category": "Payments"
+  },
+  {
     "id": "shadcn",
     "name": "shadcn/ui",
     "slug": "shadcn",
