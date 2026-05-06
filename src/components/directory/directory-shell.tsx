@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { STORAGE_KEYS } from "@/lib/constants";
@@ -19,25 +20,27 @@ export function DirectoryShell({
   companies,
   shortcutCount,
   initialShortcutGroups,
+  initialViewMode = "shortcuts",
 }: {
   companies: CompanyWithShortcuts[];
   shortcutCount: number;
   initialShortcutGroups: ShortcutGroup[];
+  initialViewMode?: ViewMode;
 }) {
+  const router = useRouter();
   const [query, setQuery] = useState("");
-  const [viewMode, setViewMode] = useState<ViewMode>("shortcuts");
+  const [viewMode, setViewMode] = useState<ViewMode>(initialViewMode);
 
   useEffect(() => {
-    const storedView = window.localStorage.getItem(STORAGE_KEYS.viewMode);
-
-    if (storedView === "shortcuts" || storedView === "companies") {
-      setViewMode(storedView);
-    }
-  }, []);
+    setViewMode(initialViewMode);
+  }, [initialViewMode]);
 
   function handleViewModeChange(nextMode: ViewMode) {
+    const nextPath = nextMode === "companies" ? "/companies" : "/";
+
     setViewMode(nextMode);
     window.localStorage.setItem(STORAGE_KEYS.viewMode, nextMode);
+    router.push(nextPath);
   }
 
   const hotkeys = useMemo(
