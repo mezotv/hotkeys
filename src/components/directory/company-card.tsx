@@ -1,11 +1,25 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Kbd } from "@/components/ui/kbd";
 import type { CompanyWithShortcuts } from "@/lib/types";
 import { getCompanyIconUrl } from "@/utils/icons";
 
+const INITIAL_SHORTCUT_COUNT = 3;
+
 export function CompanyCard({ company }: { company: CompanyWithShortcuts }) {
+  const [showAllShortcuts, setShowAllShortcuts] = useState(false);
+  const hiddenShortcutCount = Math.max(
+    company.shortcuts.length - INITIAL_SHORTCUT_COUNT,
+    0,
+  );
+  const visibleShortcuts = showAllShortcuts
+    ? company.shortcuts
+    : company.shortcuts.slice(0, INITIAL_SHORTCUT_COUNT);
+
   return (
     <Card className="transition hover:border-black/[.12] dark:hover:border-white/[.16]">
       <CardContent className="space-y-4">
@@ -34,7 +48,7 @@ export function CompanyCard({ company }: { company: CompanyWithShortcuts }) {
         </div>
 
         <ul className="space-y-2">
-          {company.shortcuts.flatMap((shortcut) =>
+          {visibleShortcuts.flatMap((shortcut) =>
             shortcut.bindings.map((binding) => (
               <li
                 className="flex items-center justify-between gap-3 rounded-xl bg-zinc-50 px-3 py-2 dark:bg-black"
@@ -57,6 +71,17 @@ export function CompanyCard({ company }: { company: CompanyWithShortcuts }) {
             )),
           )}
         </ul>
+
+        {showAllShortcuts || hiddenShortcutCount === 0 ? null : (
+          <button
+            className="w-full rounded-xl border border-black/[.08] bg-white px-3 py-2 text-sm font-medium text-zinc-700 transition hover:border-black/[.14] hover:text-zinc-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/[.08] dark:border-white/[.10] dark:bg-zinc-950 dark:text-zinc-300 dark:hover:border-white/[.18] dark:hover:text-zinc-50 dark:focus-visible:ring-white/[.12]"
+            onClick={() => setShowAllShortcuts(true)}
+            type="button"
+          >
+            Load {hiddenShortcutCount} more shortcut
+            {hiddenShortcutCount === 1 ? "" : "s"}
+          </button>
+        )}
       </CardContent>
     </Card>
   );
