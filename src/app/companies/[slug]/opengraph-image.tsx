@@ -109,7 +109,6 @@ export default async function Image({ params }: { params: Promise<Params> }) {
         <div
           style={{
             alignItems: "center",
-            background: "#ffffff",
             borderRadius: 16,
             display: "flex",
             height: 76,
@@ -121,16 +120,16 @@ export default async function Image({ params }: { params: Promise<Params> }) {
             // biome-ignore lint/performance/noImgElement: next/image is unavailable in next/og.
             <img
               alt=""
-              height={50}
+              height={68}
               src={iconDataUrl}
-              style={{ borderRadius: 8 }}
-              width={50}
+              style={{ borderRadius: 12 }}
+              width={68}
             />
           ) : (
             <div
               style={{
-                color: "#000000",
-                fontSize: 44,
+                color: "#ffffff",
+                fontSize: 60,
                 fontWeight: 700,
               }}
             >
