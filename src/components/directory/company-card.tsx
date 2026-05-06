@@ -8,17 +8,20 @@ import { Kbd } from "@/components/ui/kbd";
 import type { CompanyWithShortcuts } from "@/lib/types";
 import { getCompanyIconUrl } from "@/utils/icons";
 
-const INITIAL_SHORTCUT_COUNT = 3;
+const INITIAL_SHORTCUT_ROW_COUNT = 3;
 
 export function CompanyCard({ company }: { company: CompanyWithShortcuts }) {
   const [showAllShortcuts, setShowAllShortcuts] = useState(false);
+  const shortcutRows = company.shortcuts.flatMap((shortcut) =>
+    shortcut.bindings.map((binding) => ({ binding, shortcut })),
+  );
   const hiddenShortcutCount = Math.max(
-    company.shortcuts.length - INITIAL_SHORTCUT_COUNT,
+    shortcutRows.length - INITIAL_SHORTCUT_ROW_COUNT,
     0,
   );
-  const visibleShortcuts = showAllShortcuts
-    ? company.shortcuts
-    : company.shortcuts.slice(0, INITIAL_SHORTCUT_COUNT);
+  const visibleShortcutRows = showAllShortcuts
+    ? shortcutRows
+    : shortcutRows.slice(0, INITIAL_SHORTCUT_ROW_COUNT);
 
   return (
     <Card className="transition hover:border-black/[.12] dark:hover:border-white/[.16]">
@@ -48,28 +51,26 @@ export function CompanyCard({ company }: { company: CompanyWithShortcuts }) {
         </div>
 
         <ul className="space-y-2">
-          {visibleShortcuts.flatMap((shortcut) =>
-            shortcut.bindings.map((binding) => (
-              <li
-                className="flex items-center justify-between gap-3 rounded-xl bg-zinc-50 px-3 py-2 dark:bg-black"
-                key={`${shortcut.id}-${binding.context}`}
-              >
-                <div className="min-w-0">
-                  <p className="truncate text-sm font-medium text-zinc-950 dark:text-zinc-50">
-                    {shortcut.action}
-                  </p>
-                  <p className="truncate text-xs text-zinc-500 dark:text-zinc-400">
-                    {binding.contextLabel}
-                  </p>
-                </div>
-                <div className="flex flex-wrap justify-end gap-1">
-                  {binding.keys.map((key) => (
-                    <Kbd key={`${binding.context}-${key}`}>{key}</Kbd>
-                  ))}
-                </div>
-              </li>
-            )),
-          )}
+          {visibleShortcutRows.map(({ binding, shortcut }) => (
+            <li
+              className="flex items-center justify-between gap-3 rounded-xl bg-zinc-50 px-3 py-2 dark:bg-black"
+              key={`${shortcut.id}-${binding.context}`}
+            >
+              <div className="min-w-0">
+                <p className="truncate text-sm font-medium text-zinc-950 dark:text-zinc-50">
+                  {shortcut.action}
+                </p>
+                <p className="truncate text-xs text-zinc-500 dark:text-zinc-400">
+                  {binding.contextLabel}
+                </p>
+              </div>
+              <div className="flex flex-wrap justify-end gap-1">
+                {binding.keys.map((key) => (
+                  <Kbd key={`${binding.context}-${key}`}>{key}</Kbd>
+                ))}
+              </div>
+            </li>
+          ))}
         </ul>
 
         {showAllShortcuts || hiddenShortcutCount === 0 ? null : (
