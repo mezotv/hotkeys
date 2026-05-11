@@ -40,6 +40,14 @@
     "category": "Productivity"
   },
   {
+    "id": "dominikkoch",
+    "name": "Dominik Koch",
+    "slug": "dominikkoch",
+    "website": "https://dominikkoch.dev",
+    "description": "Software Engineer based in Germany. Open source enthusiast.",
+    "category": "Personal site"
+  },
+  {
     "id": "autumn",
     "name": "Autumn",
     "slug": "autumn",

@@ -720,5 +720,19 @@
         "keys": ["⇧", "⌘", "O"]
       }
     ]
+  },
+  {
+    "id": "toggle-mode",
+    "companyId": "dominikkoch",
+    "action": "Toggle mode",
+    "description": "Switch between light and dark display modes.",
+    "tags": ["theme", "appearance", "mode"],
+    "bindings": [
+      {
+        "context": "global",
+        "contextLabel": "Anywhere on dominikkoch.dev",
+        "keys": ["M"]
+      }
+    ]
   }
 ]
