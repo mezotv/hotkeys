@@ -916,5 +916,342 @@
         "keys": ["⌘", "K"]
       }
     ]
+  },
+  {
+    "id": "open-spotlight-menu",
+    "companyId": "linear",
+    "action": "Open spotlight menu",
+    "description": "Open the Linear spotlight (command) menu to search the workspace, run actions, and navigate.",
+    "tags": ["search", "navigation", "spotlight"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Linear dashboard",
+        "keys": ["⌘", "K"],
+        "note": "The app also accepts Ctrl+K on non-macOS platforms."
+      }
+    ]
+  },
+  {
+    "id": "ask-linear",
+    "companyId": "linear",
+    "action": "Ask Linear",
+    "description": "Switch to Ask Linear inside the open spotlight menu.",
+    "tags": ["spotlight", "ai", "ask linear", "command menu"],
+    "bindings": [
+      {
+        "context": "spotlight",
+        "contextLabel": "Linear spotlight menu (open)",
+        "keys": ["Tab"]
+      }
+    ]
+  },
+  {
+    "id": "create-issue",
+    "companyId": "linear",
+    "action": "Create issue",
+    "description": "Open the new issue composer from the Linear dashboard.",
+    "tags": ["create", "issue", "project management"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Linear dashboard",
+        "keys": ["C"]
+      }
+    ]
+  },
+  {
+    "id": "create-issue-fullscreen",
+    "companyId": "linear",
+    "action": "Create issue (fullscreen)",
+    "description": "Open the new issue composer in full screen from the Linear dashboard.",
+    "tags": ["create", "issue", "fullscreen", "dashboard"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Linear dashboard",
+        "keys": ["V"]
+      }
+    ]
+  },
+  {
+    "id": "issues-favorite-view",
+    "companyId": "linear",
+    "action": "Favorite page",
+    "description": "Favorite the current issues list so it appears in your sidebar.",
+    "tags": ["issues", "favorite", "sidebar"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Linear dashboard issues page",
+        "keys": ["⌥", "F"]
+      }
+    ]
+  },
+  {
+    "id": "issues-tab-all",
+    "companyId": "linear",
+    "action": "Show all issues",
+    "description": "Switch the issues list to the All tab.",
+    "tags": ["issues", "navigation", "filters"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Linear dashboard issues page",
+        "keys": ["1"]
+      }
+    ]
+  },
+  {
+    "id": "issues-tab-active",
+    "companyId": "linear",
+    "action": "Show active issues",
+    "description": "Switch the issues list to the Active tab.",
+    "tags": ["issues", "navigation", "filters"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Linear dashboard issues page",
+        "keys": ["2"]
+      }
+    ]
+  },
+  {
+    "id": "issues-tab-backlog",
+    "companyId": "linear",
+    "action": "Show backlog",
+    "description": "Switch the issues list to the Backlog tab.",
+    "tags": ["issues", "navigation", "backlog"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Linear dashboard issues page",
+        "keys": ["3"]
+      }
+    ]
+  },
+  {
+    "id": "open-chat",
+    "companyId": "linear",
+    "action": "Open chat",
+    "description": "Bring up Linear chat from the dashboard.",
+    "tags": ["chat", "assistant", "dashboard"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Linear dashboard",
+        "keys": ["⌘", "J"]
+      }
+    ]
+  },
+  {
+    "id": "open-help",
+    "companyId": "linear",
+    "action": "Open help",
+    "description": "Open Linear help and the full keyboard shortcuts reference from anywhere in the app.",
+    "tags": ["help", "shortcuts", "dashboard"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Linear dashboard",
+        "keys": ["?"]
+      }
+    ]
+  },
+  {
+    "id": "search-workspace",
+    "companyId": "linear",
+    "action": "Search workspace",
+    "description": "Open workspace search to find issues, projects, docs, and other items.",
+    "tags": ["search", "navigation", "dashboard"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Linear dashboard",
+        "keys": ["/"]
+      }
+    ]
+  },
+  {
+    "id": "open-settings",
+    "companyId": "linear",
+    "action": "Open settings",
+    "description": "Open Linear workspace and account settings.",
+    "tags": ["settings", "navigation", "dashboard"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Linear dashboard",
+        "keys": ["G", "S"]
+      }
+    ]
+  },
+  {
+    "id": "switch-workspace",
+    "companyId": "linear",
+    "action": "Switch workspace",
+    "description": "Open the workspace switcher to change teams or organizations.",
+    "tags": ["workspace", "team", "navigation", "dashboard"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Linear dashboard",
+        "keys": ["O", "W"]
+      }
+    ]
+  },
+  {
+    "id": "logout",
+    "companyId": "linear",
+    "action": "Log out",
+    "description": "Sign out of your Linear account.",
+    "tags": ["account", "session", "dashboard"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Linear dashboard",
+        "keys": ["⌥", "⇧", "Q"]
+      }
+    ]
+  },
+  {
+    "id": "attach-file",
+    "companyId": "linear",
+    "action": "Attach file",
+    "description": "Open the attachment picker from Linear chat.",
+    "tags": ["chat", "attachments", "files"],
+    "bindings": [
+      {
+        "context": "chat",
+        "contextLabel": "Linear chat",
+        "keys": ["⌘", "⇧", "U"]
+      }
+    ]
+  },
+  {
+    "id": "insert-newline",
+    "companyId": "linear",
+    "action": "Insert newline",
+    "description": "Insert a new line in the Linear chat composer.",
+    "tags": ["chat", "message", "composer"],
+    "bindings": [
+      {
+        "context": "chat",
+        "contextLabel": "Linear chat",
+        "keys": ["Enter"]
+      }
+    ]
+  },
+  {
+    "id": "submit-message",
+    "companyId": "linear",
+    "action": "Submit message",
+    "description": "Submit the current message in Linear chat.",
+    "tags": ["chat", "message", "submit"],
+    "bindings": [
+      {
+        "context": "chat",
+        "contextLabel": "Linear chat",
+        "keys": ["⇧", "Enter"]
+      }
+    ]
+  },
+  {
+    "id": "create-project",
+    "companyId": "linear",
+    "action": "Create project",
+    "description": "Create a new project from the Linear projects page.",
+    "tags": ["create", "project", "projects"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Linear dashboard /projects",
+        "keys": ["N", "P"]
+      }
+    ]
+  },
+  {
+    "id": "open-filters",
+    "companyId": "linear",
+    "action": "Open filters",
+    "description": "Open filtering controls on list, board, and other views across the Linear dashboard.",
+    "tags": ["filter", "search", "dashboard"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Linear dashboard",
+        "keys": ["F"]
+      }
+    ]
+  },
+  {
+    "id": "toggle-details-sidebar",
+    "companyId": "linear",
+    "action": "Toggle details sidebar",
+    "description": "Show or hide the details sidebar on the Linear projects page.",
+    "tags": ["details", "sidebar", "projects"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Linear dashboard /projects",
+        "keys": ["J"]
+      }
+    ]
+  },
+  {
+    "id": "show-display-options",
+    "companyId": "linear",
+    "action": "Show display options",
+    "description": "Open display options (grouping, ordering, fields, etc.) on list, board, and other views across the Linear dashboard.",
+    "tags": ["display", "options", "layout", "dashboard"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Linear dashboard",
+        "keys": ["⇧", "V"]
+      }
+    ]
+  },
+  {
+    "id": "views-goto-issues",
+    "companyId": "linear",
+    "action": "Go to issues view",
+    "description": "Switch to the Issues tab when browsing saved views.",
+    "tags": ["views", "navigation", "issues"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Linear dashboard /views",
+        "keys": ["1"]
+      }
+    ]
+  },
+  {
+    "id": "views-goto-projects",
+    "companyId": "linear",
+    "action": "Go to projects and other views",
+    "description": "Switch to the Projects tab or other saved view types.",
+    "tags": ["views", "navigation", "projects"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Linear dashboard /views",
+        "keys": ["2"]
+      }
+    ]
+  },
+  {
+    "id": "views-save",
+    "companyId": "linear",
+    "action": "Save view",
+    "description": "Save the current view (same as the save / add view control in the header).",
+    "tags": ["views", "save", "layout"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Linear dashboard /views",
+        "keys": ["⌥", "V"]
+      }
+    ]
   }
 ]

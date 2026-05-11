@@ -94,5 +94,13 @@
     "website": "https://www.igdb.com",
     "description": "IGDB.com is a video game community website, intended for both game consumers and video game professionals alike.",
     "category": "Gaming"
+  },
+  {
+    "id": "linear",
+    "name": "Linear",
+    "slug": "linear",
+    "website": "https://linear.app",
+    "description": "Linear is a purpose-built tool for planning and building products.",
+    "category": "Project management"
   }
 ]
