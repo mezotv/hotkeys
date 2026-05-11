@@ -792,6 +792,34 @@
     ]
   },
   {
+    "id": "confirm-chat-action",
+    "companyId": "dimension",
+    "action": "Confirm chat action",
+    "description": "Confirm the suggested or pending action in Dimension chat.",
+    "tags": ["chat", "confirmation", "submit"],
+    "bindings": [
+      {
+        "context": "chat",
+        "contextLabel": "Dimension chat",
+        "keys": ["⌘", "Enter"]
+      }
+    ]
+  },
+  {
+    "id": "insert-newline",
+    "companyId": "dimension",
+    "action": "Insert newline",
+    "description": "Insert a new line in the Dimension chat composer.",
+    "tags": ["chat", "message", "composer"],
+    "bindings": [
+      {
+        "context": "chat",
+        "contextLabel": "Dimension chat",
+        "keys": ["⇧", "Enter"]
+      }
+    ]
+  },
+  {
     "id": "toggle-mode",
     "companyId": "dominikkoch",
     "action": "Toggle mode",
