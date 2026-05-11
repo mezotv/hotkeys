@@ -46,13 +46,83 @@
   {
     "id": "book-call",
     "companyId": "notra",
-    "action": "Book a call",
-    "description": "Open the booking flow from the dashboard header.",
+    "action": "Schedule a demo",
+    "description": "Open the demo scheduling flow from the dashboard header.",
     "tags": ["calendar", "support"],
     "bindings": [
       {
         "context": "dashboard",
         "contextLabel": "Notra dashboard header",
+        "keys": ["D"]
+      }
+    ]
+  },
+  {
+    "id": "create-content",
+    "companyId": "notra",
+    "action": "Create content",
+    "description": "Open the Create Content dialog from a workspace overview or content page.",
+    "tags": ["create", "content", "dialog"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "/[slug] and /[slug]/content",
+        "keys": ["C"]
+      }
+    ]
+  },
+  {
+    "id": "create-identity",
+    "companyId": "notra",
+    "action": "Create identity",
+    "description": "Open the Create Identity dialog from the Brand Identity tab.",
+    "tags": ["create", "brand", "identity", "dialog"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "/[slug]/brand/identity, Identity tab",
+        "keys": ["C"]
+      }
+    ]
+  },
+  {
+    "id": "create-reference",
+    "companyId": "notra",
+    "action": "Create reference",
+    "description": "Open the Create Reference dialog from the Brand Identity references tab.",
+    "tags": ["create", "brand", "reference", "dialog"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "/[slug]/brand/identity, References tab",
+        "keys": ["C"]
+      }
+    ]
+  },
+  {
+    "id": "create-skill",
+    "companyId": "notra",
+    "action": "Create skill",
+    "description": "Open the Create Skill dialog from the skills page.",
+    "tags": ["create", "skills", "dialog"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "/[slug]/skills",
+        "keys": ["C"]
+      }
+    ]
+  },
+  {
+    "id": "create-api-key",
+    "companyId": "notra",
+    "action": "Create API key",
+    "description": "Open the Create API Key dialog from the API keys page.",
+    "tags": ["create", "api keys", "dialog"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "/[slug]/api-keys",
         "keys": ["C"]
       }
     ]
