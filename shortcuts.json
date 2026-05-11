@@ -902,5 +902,19 @@
         "keys": ["⌘", "K"]
       }
     ]
+  },
+  {
+    "id": "open-spotlight-menu",
+    "companyId": "igdb",
+    "action": "Open spotlight menu",
+    "description": "Open the IGDB spotlight menu for search and navigation.",
+    "tags": ["search", "navigation", "spotlight", "games"],
+    "bindings": [
+      {
+        "context": "website",
+        "contextLabel": "IGDB website",
+        "keys": ["⌘", "K"]
+      }
+    ]
   }
 ]

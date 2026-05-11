@@ -86,5 +86,13 @@
     "website": "https://www.cloudflare.com",
     "description": "Cloudflare provides security, performance, and developer services for websites, applications, and networks.",
     "category": "Developer tools"
+  },
+  {
+    "id": "igdb",
+    "name": "IGDB",
+    "slug": "igdb",
+    "website": "https://www.igdb.com",
+    "description": "IGDB.com is a video game community website, intended for both game consumers and video game professionals alike.",
+    "category": "Gaming"
   }
 ]
