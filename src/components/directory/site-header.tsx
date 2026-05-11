@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { AUTHOR_URL, GITHUB_REPO_URL } from "@/lib/constants";
+import { AUTHOR_URL } from "@/lib/constants";
 import { AddShortcutButton } from "./add-shortcut-button";
+import { GitHubButton } from "./github-button";
 
 export function SiteHeader() {
   return (
@@ -27,16 +27,7 @@ export function SiteHeader() {
       </div>
 
       <nav className="flex items-center gap-2">
-        <Button
-          className="hidden sm:inline-flex"
-          nativeButton={false}
-          render={
-            <a href={GITHUB_REPO_URL} rel="noreferrer" target="_blank">
-              GitHub
-            </a>
-          }
-          variant="outline"
-        />
+        <GitHubButton />
         <AddShortcutButton />
       </nav>
     </header>

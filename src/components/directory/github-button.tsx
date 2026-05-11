@@ -4,26 +4,26 @@ import { useHotkeys } from "@tanstack/react-hotkeys";
 import { useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Kbd } from "@/components/ui/kbd";
-import { EDIT_SHORTCUTS_URL } from "@/lib/constants";
+import { GITHUB_REPO_URL } from "@/lib/constants";
 
-export function AddShortcutButton() {
-  const addShortcutHotkey = useMemo(
+export function GitHubButton() {
+  const githubHotkey = useMemo(
     () => [
       {
         callback: (event: KeyboardEvent) => {
           event.preventDefault();
-          window.open(EDIT_SHORTCUTS_URL, "_blank", "noopener,noreferrer");
+          window.open(GITHUB_REPO_URL, "_blank", "noopener,noreferrer");
         },
-        hotkey: "S",
+        hotkey: "G",
         options: {
-          meta: { name: "Add shortcut" },
+          meta: { name: "Open GitHub" },
         },
       },
     ],
     [],
   );
 
-  useHotkeys(addShortcutHotkey, {
+  useHotkeys(githubHotkey, {
     ignoreInputs: true,
     preventDefault: false,
     requireReset: true,
@@ -32,19 +32,20 @@ export function AddShortcutButton() {
 
   return (
     <Button
-      className="gap-2 pr-2"
+      className="hidden gap-2 pr-2 sm:inline-flex"
       nativeButton={false}
       render={
         <a
-          aria-keyshortcuts="S"
-          href={EDIT_SHORTCUTS_URL}
+          aria-keyshortcuts="G"
+          href={GITHUB_REPO_URL}
           rel="noreferrer"
           target="_blank"
         >
-          <span>Add shortcut</span>
-          <Kbd className="min-w-5 px-1 py-0 text-[10px] leading-4">S</Kbd>
+          <span>GitHub</span>
+          <Kbd className="min-w-5 px-1 py-0 text-[10px] leading-4">G</Kbd>
         </a>
       }
+      variant="outline"
     />
   );
 }
