@@ -1,6 +1,6 @@
 "use client";
 
-import { useHotkeys } from "@tanstack/react-hotkeys";
+import { type RegisterableHotkey, useHotkeys } from "@tanstack/react-hotkeys";
 import { useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Kbd } from "@/components/ui/kbd";
@@ -14,7 +14,7 @@ export function GitHubButton() {
           event.preventDefault();
           window.open(GITHUB_REPO_URL, "_blank", "noopener,noreferrer");
         },
-        hotkey: "G",
+        hotkey: "G" as RegisterableHotkey,
         options: {
           meta: { name: "Open GitHub" },
         },
