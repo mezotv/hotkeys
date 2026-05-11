@@ -692,5 +692,33 @@
         "keys": ["⌃", "`"]
       }
     ]
+  },
+  {
+    "id": "open-spotlight-menu",
+    "companyId": "dimension",
+    "action": "Open spotlight menu",
+    "description": "Open the Dimension spotlight menu for search, actions, and navigation.",
+    "tags": ["search", "navigation", "spotlight"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Dimension dashboard",
+        "keys": ["⌘", "K"]
+      }
+    ]
+  },
+  {
+    "id": "open-new-chat",
+    "companyId": "dimension",
+    "action": "Open new chat",
+    "description": "Start a new chat in Dimension.",
+    "tags": ["chat", "new", "conversation"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Dimension dashboard",
+        "keys": ["⇧", "⌘", "O"]
+      }
+    ]
   }
 ]

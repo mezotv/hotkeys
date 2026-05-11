@@ -32,6 +32,14 @@
     "category": "Analytics"
   },
   {
+    "id": "dimension",
+    "name": "Dimension",
+    "slug": "dimension",
+    "website": "https://dimension.dev",
+    "description": "Connected to your apps. Understands your work. Gets things done on your behalf.",
+    "category": "Productivity"
+  },
+  {
     "id": "autumn",
     "name": "Autumn",
     "slug": "autumn",
