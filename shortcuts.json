@@ -734,5 +734,75 @@
         "keys": ["M"]
       }
     ]
+  },
+  {
+    "id": "toggle-sidebar",
+    "companyId": "marble",
+    "action": "Toggle sidebar",
+    "description": "Collapse or expand the Marble dashboard sidebar.",
+    "tags": ["navigation", "sidebar", "layout"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Marble dashboard",
+        "keys": ["⌘", "K"]
+      }
+    ]
+  },
+  {
+    "id": "bold-text",
+    "companyId": "marble",
+    "action": "Bold text",
+    "description": "Apply bold formatting to the selected editor text.",
+    "tags": ["editor", "formatting", "text"],
+    "bindings": [
+      {
+        "context": "editor",
+        "contextLabel": "Marble editor",
+        "keys": ["⌘", "B"]
+      }
+    ]
+  },
+  {
+    "id": "italic-text",
+    "companyId": "marble",
+    "action": "Italic text",
+    "description": "Apply italic formatting to the selected editor text.",
+    "tags": ["editor", "formatting", "text"],
+    "bindings": [
+      {
+        "context": "editor",
+        "contextLabel": "Marble editor",
+        "keys": ["⌘", "I"]
+      }
+    ]
+  },
+  {
+    "id": "underline-text",
+    "companyId": "marble",
+    "action": "Underline text",
+    "description": "Underline the selected editor text.",
+    "tags": ["editor", "formatting", "text"],
+    "bindings": [
+      {
+        "context": "editor",
+        "contextLabel": "Marble editor",
+        "keys": ["⌘", "U"]
+      }
+    ]
+  },
+  {
+    "id": "code-block",
+    "companyId": "marble",
+    "action": "Code block",
+    "description": "Format the selected editor text as a code block.",
+    "tags": ["editor", "formatting", "code"],
+    "bindings": [
+      {
+        "context": "editor",
+        "contextLabel": "Marble editor",
+        "keys": ["⌘", "E"]
+      }
+    ]
   }
 ]

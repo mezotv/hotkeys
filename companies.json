@@ -70,5 +70,13 @@
     "website": "https://www.convex.dev",
     "description": "Convex provides the backend building blocks for your agents. Everything you need to build your full-stack project.",
     "category": "Developer tools"
+  },
+  {
+    "id": "marble",
+    "name": "Marble",
+    "slug": "marble",
+    "website": "https://marblecms.com",
+    "description": "A simple headless CMS for managing your blog and media files.",
+    "category": "CMS"
   }
 ]
