@@ -238,7 +238,7 @@ export default async function Image({ params }: { params: Promise<Params> }) {
         <div>
           {`${shortcutRows.length} ${shortcutRows.length === 1 ? "shortcut" : "shortcuts"}`}
         </div>
-        <div>hotkeys.dominikkoch.dev</div>
+        <div>hotkeys.sh</div>
       </div>
     </div>,
     size,

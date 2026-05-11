@@ -2,7 +2,7 @@
 
 A keyboard shortcut directory by [Dominik](https://dominikkoch.dev).
 
-The live site is planned for [hotkeys.dominikkoch.dev](https://hotkeys.dominikkoch.dev). It reads shortcuts from root-level JSON files so adding or fixing a shortcut is a small GitHub PR.
+The live site is at [hotkeys.sh](https://hotkeys.sh). It reads shortcuts from root-level JSON files so adding or fixing a shortcut is a small GitHub PR.
 
 ## Contributing Shortcuts
 
