@@ -804,5 +804,33 @@
         "keys": ["⌘", "E"]
       }
     ]
+  },
+  {
+    "id": "toggle-sidebar",
+    "companyId": "cloudflare",
+    "action": "Toggle sidebar",
+    "description": "Collapse or expand the Cloudflare dashboard sidebar.",
+    "tags": ["navigation", "sidebar", "layout"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Cloudflare dashboard",
+        "keys": ["⌘", "B"]
+      }
+    ]
+  },
+  {
+    "id": "open-spotlight-menu",
+    "companyId": "cloudflare",
+    "action": "Open spotlight menu",
+    "description": "Open the Cloudflare dashboard spotlight menu for search, actions, and navigation.",
+    "tags": ["search", "navigation", "spotlight"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Cloudflare dashboard",
+        "keys": ["⌘", "K"]
+      }
+    ]
   }
 ]

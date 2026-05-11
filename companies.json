@@ -78,5 +78,13 @@
     "website": "https://marblecms.com",
     "description": "A simple headless CMS for managing your blog and media files.",
     "category": "CMS"
+  },
+  {
+    "id": "cloudflare",
+    "name": "Cloudflare",
+    "slug": "cloudflare",
+    "website": "https://www.cloudflare.com",
+    "description": "Cloudflare provides security, performance, and developer services for websites, applications, and networks.",
+    "category": "Developer tools"
   }
 ]
