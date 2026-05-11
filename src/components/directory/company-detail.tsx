@@ -25,8 +25,7 @@ export function CompanyDetail({ company }: { company: CompanyWithShortcuts }) {
 
       <header className="mt-6 flex items-start gap-4">
         <Image
-          alt=""
-          aria-hidden="true"
+          alt={`${company.name} logo`}
           className="rounded-xl"
           height={56}
           src={getCompanyIconUrl(company)}
@@ -41,8 +40,8 @@ export function CompanyDetail({ company }: { company: CompanyWithShortcuts }) {
             {company.category} ·{" "}
             <a
               className="underline decoration-black/20 transition hover:text-zinc-950 hover:decoration-black dark:decoration-white/25 dark:hover:text-zinc-50 dark:hover:decoration-white"
-              href={company.website}
-              rel="noreferrer"
+              href={`${company.website}?ref=hotkeys.dominikkoch.dev`}
+              rel="noreferrer noopener"
               target="_blank"
             >
               {new URL(company.website).hostname.replace(/^www\./, "")}
