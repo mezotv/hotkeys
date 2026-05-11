@@ -3,7 +3,6 @@ import Link from "next/link";
 import { CompanyDetailShortcut } from "@/components/directory/company-detail-shortcut";
 import { HotkeyHighlightProvider } from "@/components/directory/hotkey-highlight";
 import { Card, CardContent } from "@/components/ui/card";
-import { SITE_URL } from "@/lib/constants";
 import type { CompanyWithShortcuts } from "@/lib/types";
 import { bindingToRegistration } from "@/utils/hotkey-registration";
 import { getCompanyIconUrl } from "@/utils/icons";
@@ -42,7 +41,7 @@ export function CompanyDetail({ company }: { company: CompanyWithShortcuts }) {
             {company.category} ·{" "}
             <a
               className="underline decoration-black/20 transition hover:text-zinc-950 hover:decoration-black dark:decoration-white/25 dark:hover:text-zinc-50 dark:hover:decoration-white"
-              href={`${SITE_URL}/?ref=${encodeURIComponent(company.website)}`}
+              href={company.website}
               rel="noreferrer"
               target="_blank"
             >
