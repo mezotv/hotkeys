@@ -102,5 +102,13 @@
     "website": "https://linear.app",
     "description": "Linear is a purpose-built tool for planning and building products.",
     "category": "Project management"
+  },
+  {
+    "id": "mintlify",
+    "name": "Mintlify",
+    "slug": "mintlify",
+    "website": "https://mintlify.com",
+    "description": "Meet the next generation of documentation. AI-native, beautiful out-of-the-box, and built for developers.",
+    "category": "Developer tools"
   }
 ]

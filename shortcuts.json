@@ -1281,5 +1281,26 @@
         "keys": ["⌥", "V"]
       }
     ]
+  },
+  {
+    "id": "open-spotlight-menu",
+    "companyId": "mintlify",
+    "action": "Open spotlight menu",
+    "description": "Open the Mintlify search spotlight to jump across pages, docs, and actions.",
+    "tags": ["search", "navigation", "spotlight"],
+    "bindings": [
+      {
+        "context": "docs",
+        "contextLabel": "Mintlify-powered customer docs",
+        "keys": ["⌘", "K"],
+        "note": "Customer docs also accept Ctrl+K on non-macOS platforms."
+      },
+      {
+        "context": "dashboard",
+        "contextLabel": "Mintlify dashboard",
+        "keys": ["⌘", "K"],
+        "note": "The dashboard also accepts Ctrl+K on non-macOS platforms."
+      }
+    ]
   }
 ]
