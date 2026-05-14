@@ -277,12 +277,12 @@
     "id": "go-to-emails",
     "companyId": "resend",
     "action": "Go to emails",
-    "description": "Navigate to the Emails page from the spotlight menu.",
-    "tags": ["navigation", "emails", "spotlight"],
+    "description": "Navigate to the Emails page from the dashboard.",
+    "tags": ["navigation", "emails"],
     "bindings": [
       {
-        "context": "spotlight",
-        "contextLabel": "Resend spotlight menu",
+        "context": "dashboard",
+        "contextLabel": "Resend dashboard",
         "keys": ["G", "E"]
       }
     ]
@@ -291,12 +291,12 @@
     "id": "go-to-broadcasts",
     "companyId": "resend",
     "action": "Go to broadcasts",
-    "description": "Navigate to the Broadcasts page from the spotlight menu.",
-    "tags": ["navigation", "broadcasts", "spotlight"],
+    "description": "Navigate to the Broadcasts page from the dashboard.",
+    "tags": ["navigation", "broadcasts"],
     "bindings": [
       {
-        "context": "spotlight",
-        "contextLabel": "Resend spotlight menu",
+        "context": "dashboard",
+        "contextLabel": "Resend dashboard",
         "keys": ["G", "B"]
       }
     ]
@@ -305,12 +305,12 @@
     "id": "go-to-templates",
     "companyId": "resend",
     "action": "Go to templates",
-    "description": "Navigate to the Templates page from the spotlight menu.",
-    "tags": ["navigation", "templates", "spotlight"],
+    "description": "Navigate to the Templates page from the dashboard.",
+    "tags": ["navigation", "templates"],
     "bindings": [
       {
-        "context": "spotlight",
-        "contextLabel": "Resend spotlight menu",
+        "context": "dashboard",
+        "contextLabel": "Resend dashboard",
         "keys": ["G", "T"]
       }
     ]
@@ -319,12 +319,12 @@
     "id": "go-to-contacts",
     "companyId": "resend",
     "action": "Go to contacts",
-    "description": "Navigate to the Contacts page from the spotlight menu.",
-    "tags": ["navigation", "contacts", "audience", "spotlight"],
+    "description": "Navigate to the Contacts page from the dashboard.",
+    "tags": ["navigation", "contacts", "audience"],
     "bindings": [
       {
-        "context": "spotlight",
-        "contextLabel": "Resend spotlight menu",
+        "context": "dashboard",
+        "contextLabel": "Resend dashboard",
         "keys": ["G", "C"]
       }
     ]
@@ -333,12 +333,12 @@
     "id": "go-to-properties",
     "companyId": "resend",
     "action": "Go to properties",
-    "description": "Navigate to the Properties page from the spotlight menu.",
-    "tags": ["navigation", "properties", "audience", "spotlight"],
+    "description": "Navigate to the Properties page from the dashboard.",
+    "tags": ["navigation", "properties", "audience"],
     "bindings": [
       {
-        "context": "spotlight",
-        "contextLabel": "Resend spotlight menu",
+        "context": "dashboard",
+        "contextLabel": "Resend dashboard",
         "keys": ["G", "P"]
       }
     ]
@@ -347,12 +347,12 @@
     "id": "go-to-segments",
     "companyId": "resend",
     "action": "Go to segments",
-    "description": "Navigate to the Segments page from the spotlight menu.",
-    "tags": ["navigation", "segments", "audience", "spotlight"],
+    "description": "Navigate to the Segments page from the dashboard.",
+    "tags": ["navigation", "segments", "audience"],
     "bindings": [
       {
-        "context": "spotlight",
-        "contextLabel": "Resend spotlight menu",
+        "context": "dashboard",
+        "contextLabel": "Resend dashboard",
         "keys": ["G", "S"]
       }
     ]
@@ -361,12 +361,12 @@
     "id": "go-to-topics",
     "companyId": "resend",
     "action": "Go to topics",
-    "description": "Navigate to the Topics page from the spotlight menu.",
-    "tags": ["navigation", "topics", "audience", "spotlight"],
+    "description": "Navigate to the Topics page from the dashboard.",
+    "tags": ["navigation", "topics", "audience"],
     "bindings": [
       {
-        "context": "spotlight",
-        "contextLabel": "Resend spotlight menu",
+        "context": "dashboard",
+        "contextLabel": "Resend dashboard",
         "keys": ["G", "O"]
       }
     ]
@@ -375,12 +375,12 @@
     "id": "go-to-metrics",
     "companyId": "resend",
     "action": "Go to metrics",
-    "description": "Navigate to the Metrics page from the spotlight menu.",
-    "tags": ["navigation", "metrics", "spotlight"],
+    "description": "Navigate to the Metrics page from the dashboard.",
+    "tags": ["navigation", "metrics"],
     "bindings": [
       {
-        "context": "spotlight",
-        "contextLabel": "Resend spotlight menu",
+        "context": "dashboard",
+        "contextLabel": "Resend dashboard",
         "keys": ["G", "R"]
       }
     ]
@@ -389,12 +389,12 @@
     "id": "go-to-domains",
     "companyId": "resend",
     "action": "Go to domains",
-    "description": "Navigate to the Domains page from the spotlight menu.",
-    "tags": ["navigation", "domains", "spotlight"],
+    "description": "Navigate to the Domains page from the dashboard.",
+    "tags": ["navigation", "domains"],
     "bindings": [
       {
-        "context": "spotlight",
-        "contextLabel": "Resend spotlight menu",
+        "context": "dashboard",
+        "contextLabel": "Resend dashboard",
         "keys": ["G", "D"]
       }
     ]
@@ -403,12 +403,12 @@
     "id": "go-to-logs",
     "companyId": "resend",
     "action": "Go to logs",
-    "description": "Navigate to the Logs page from the spotlight menu.",
-    "tags": ["navigation", "logs", "spotlight"],
+    "description": "Navigate to the Logs page from the dashboard.",
+    "tags": ["navigation", "logs"],
     "bindings": [
       {
-        "context": "spotlight",
-        "contextLabel": "Resend spotlight menu",
+        "context": "dashboard",
+        "contextLabel": "Resend dashboard",
         "keys": ["G", "L"]
       }
     ]
@@ -417,12 +417,12 @@
     "id": "go-to-api-keys",
     "companyId": "resend",
     "action": "Go to API keys",
-    "description": "Navigate to the API keys page from the spotlight menu.",
-    "tags": ["navigation", "api keys", "spotlight"],
+    "description": "Navigate to the API keys page from the dashboard.",
+    "tags": ["navigation", "api keys"],
     "bindings": [
       {
-        "context": "spotlight",
-        "contextLabel": "Resend spotlight menu",
+        "context": "dashboard",
+        "contextLabel": "Resend dashboard",
         "keys": ["G", "A"]
       }
     ]
@@ -431,12 +431,12 @@
     "id": "go-to-webhooks",
     "companyId": "resend",
     "action": "Go to webhooks",
-    "description": "Navigate to the Webhooks page from the spotlight menu.",
-    "tags": ["navigation", "webhooks", "spotlight"],
+    "description": "Navigate to the Webhooks page from the dashboard.",
+    "tags": ["navigation", "webhooks"],
     "bindings": [
       {
-        "context": "spotlight",
-        "contextLabel": "Resend spotlight menu",
+        "context": "dashboard",
+        "contextLabel": "Resend dashboard",
         "keys": ["G", "W"]
       }
     ]
@@ -445,12 +445,12 @@
     "id": "go-to-profile",
     "companyId": "resend",
     "action": "Go to profile",
-    "description": "Navigate to the Profile page from the spotlight menu.",
-    "tags": ["navigation", "profile", "spotlight"],
+    "description": "Navigate to the Profile page from the dashboard.",
+    "tags": ["navigation", "profile"],
     "bindings": [
       {
-        "context": "spotlight",
-        "contextLabel": "Resend spotlight menu",
+        "context": "dashboard",
+        "contextLabel": "Resend dashboard",
         "keys": ["G", "V"]
       }
     ]
@@ -459,12 +459,12 @@
     "id": "go-to-settings",
     "companyId": "resend",
     "action": "Go to settings",
-    "description": "Navigate to the Settings page from the spotlight menu.",
-    "tags": ["navigation", "settings", "spotlight"],
+    "description": "Navigate to the Settings page from the dashboard.",
+    "tags": ["navigation", "settings"],
     "bindings": [
       {
-        "context": "spotlight",
-        "contextLabel": "Resend spotlight menu",
+        "context": "dashboard",
+        "contextLabel": "Resend dashboard",
         "keys": ["G", "Q"]
       }
     ]
@@ -473,12 +473,12 @@
     "id": "go-to-usage",
     "companyId": "resend",
     "action": "Go to usage",
-    "description": "Navigate to the Usage page from the spotlight menu.",
-    "tags": ["navigation", "usage", "settings", "spotlight"],
+    "description": "Navigate to the Usage page from the dashboard.",
+    "tags": ["navigation", "usage", "settings"],
     "bindings": [
       {
-        "context": "spotlight",
-        "contextLabel": "Resend spotlight menu",
+        "context": "dashboard",
+        "contextLabel": "Resend dashboard",
         "keys": ["G", "U"]
       }
     ]
@@ -487,12 +487,12 @@
     "id": "go-to-billing",
     "companyId": "resend",
     "action": "Go to billing",
-    "description": "Navigate to the Billing page from the spotlight menu.",
-    "tags": ["navigation", "billing", "settings", "spotlight"],
+    "description": "Navigate to the Billing page from the dashboard.",
+    "tags": ["navigation", "billing", "settings"],
     "bindings": [
       {
-        "context": "spotlight",
-        "contextLabel": "Resend spotlight menu",
+        "context": "dashboard",
+        "contextLabel": "Resend dashboard",
         "keys": ["G", "I"]
       }
     ]
@@ -501,12 +501,12 @@
     "id": "go-to-team",
     "companyId": "resend",
     "action": "Go to team",
-    "description": "Navigate to the Team page from the spotlight menu.",
-    "tags": ["navigation", "team", "settings", "spotlight"],
+    "description": "Navigate to the Team page from the dashboard.",
+    "tags": ["navigation", "team", "settings"],
     "bindings": [
       {
-        "context": "spotlight",
-        "contextLabel": "Resend spotlight menu",
+        "context": "dashboard",
+        "contextLabel": "Resend dashboard",
         "keys": ["G", "K"]
       }
     ]
@@ -515,12 +515,12 @@
     "id": "go-to-smtp",
     "companyId": "resend",
     "action": "Go to SMTP",
-    "description": "Navigate to the SMTP page from the spotlight menu.",
-    "tags": ["navigation", "smtp", "settings", "spotlight"],
+    "description": "Navigate to the SMTP page from the dashboard.",
+    "tags": ["navigation", "smtp", "settings"],
     "bindings": [
       {
-        "context": "spotlight",
-        "contextLabel": "Resend spotlight menu",
+        "context": "dashboard",
+        "contextLabel": "Resend dashboard",
         "keys": ["G", "Y"]
       }
     ]
@@ -529,12 +529,12 @@
     "id": "go-to-integrations",
     "companyId": "resend",
     "action": "Go to integrations",
-    "description": "Navigate to the Integrations page from the spotlight menu.",
-    "tags": ["navigation", "integrations", "settings", "spotlight"],
+    "description": "Navigate to the Integrations page from the dashboard.",
+    "tags": ["navigation", "integrations", "settings"],
     "bindings": [
       {
-        "context": "spotlight",
-        "contextLabel": "Resend spotlight menu",
+        "context": "dashboard",
+        "contextLabel": "Resend dashboard",
         "keys": ["G", "N"]
       }
     ]
@@ -543,12 +543,12 @@
     "id": "go-to-unsubscribe-page",
     "companyId": "resend",
     "action": "Go to unsubscribe page",
-    "description": "Navigate to the Unsubscribe page from the spotlight menu.",
-    "tags": ["navigation", "unsubscribe", "settings", "spotlight"],
+    "description": "Navigate to the Unsubscribe page from the dashboard.",
+    "tags": ["navigation", "unsubscribe", "settings"],
     "bindings": [
       {
-        "context": "spotlight",
-        "contextLabel": "Resend spotlight menu",
+        "context": "dashboard",
+        "contextLabel": "Resend dashboard",
         "keys": ["G", "Z"]
       }
     ]
@@ -557,12 +557,12 @@
     "id": "go-to-documents",
     "companyId": "resend",
     "action": "Go to documents",
-    "description": "Navigate to the Documents page from the spotlight menu.",
-    "tags": ["navigation", "documents", "settings", "spotlight"],
+    "description": "Navigate to the Documents page from the dashboard.",
+    "tags": ["navigation", "documents", "settings"],
     "bindings": [
       {
-        "context": "spotlight",
-        "contextLabel": "Resend spotlight menu",
+        "context": "dashboard",
+        "contextLabel": "Resend dashboard",
         "keys": ["G", "J"]
       }
     ]
@@ -571,12 +571,12 @@
     "id": "go-to-exports",
     "companyId": "resend",
     "action": "Go to exports",
-    "description": "Navigate to the Exports page from the spotlight menu.",
-    "tags": ["navigation", "exports", "settings", "spotlight"],
+    "description": "Navigate to the Exports page from the dashboard.",
+    "tags": ["navigation", "exports", "settings"],
     "bindings": [
       {
-        "context": "spotlight",
-        "contextLabel": "Resend spotlight menu",
+        "context": "dashboard",
+        "contextLabel": "Resend dashboard",
         "keys": ["G", "X"]
       }
     ]
@@ -585,12 +585,12 @@
     "id": "go-to-automations",
     "companyId": "resend",
     "action": "Go to automations",
-    "description": "Navigate to the Automations page from the spotlight menu.",
-    "tags": ["navigation", "automations", "spotlight"],
+    "description": "Navigate to the Automations page from the dashboard.",
+    "tags": ["navigation", "automations"],
     "bindings": [
       {
-        "context": "spotlight",
-        "contextLabel": "Resend spotlight menu",
+        "context": "dashboard",
+        "contextLabel": "Resend dashboard",
         "keys": ["G", "F"]
       }
     ]
@@ -599,12 +599,12 @@
     "id": "go-to-help",
     "companyId": "resend",
     "action": "Go to help",
-    "description": "Navigate to the Help page from the spotlight menu.",
-    "tags": ["navigation", "help", "spotlight"],
+    "description": "Navigate to the Help page from the dashboard.",
+    "tags": ["navigation", "help"],
     "bindings": [
       {
-        "context": "spotlight",
-        "contextLabel": "Resend spotlight menu",
+        "context": "dashboard",
+        "contextLabel": "Resend dashboard",
         "keys": ["G", "H"]
       }
     ]
@@ -968,7 +968,7 @@
     "tags": ["spotlight", "ai", "ask linear", "command menu"],
     "bindings": [
       {
-        "context": "spotlight",
+        "context": "dashboard",
         "contextLabel": "Linear spotlight menu (open)",
         "keys": ["Tab"]
       }
