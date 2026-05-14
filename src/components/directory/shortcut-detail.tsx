@@ -13,29 +13,43 @@ import type { ShortcutGroup } from "@/lib/types";
 import { bindingToRegistration } from "@/utils/hotkey-registration";
 import { getCompanyIconUrl } from "@/utils/icons";
 
-function uniqueChords(group: ShortcutGroup) {
-  const seen = new Map<string, string[]>();
+function mostUsedChord(group: ShortcutGroup) {
+  const counts = new Map<string, { keys: string[]; count: number }>();
 
   for (const { shortcut } of group.entries) {
     for (const binding of shortcut.bindings) {
       const signature = binding.keys.join("+").toLowerCase();
+      const existing = counts.get(signature);
 
-      if (!seen.has(signature)) {
-        seen.set(signature, binding.keys);
+      if (existing) {
+        existing.count += 1;
+      } else {
+        counts.set(signature, { keys: binding.keys, count: 1 });
       }
     }
   }
 
-  return Array.from(seen.values());
+  let best: { keys: string[]; count: number } | undefined;
+  for (const entry of counts.values()) {
+    if (!best || entry.count > best.count) {
+      best = entry;
+    }
+  }
+
+  return best?.keys ?? [];
 }
 
+const MAX_VISIBLE_AVATARS = 4;
+
 export function ShortcutDetail({ group }: { group: ShortcutGroup }) {
-  const chords = uniqueChords(group);
+  const topChord = mostUsedChord(group);
   const appCount = group.entries.length;
+  const visibleEntries = group.entries.slice(0, MAX_VISIBLE_AVATARS);
+  const overflowCount = appCount - visibleEntries.length;
   const registrations = group.entries.flatMap(({ company, shortcut }) =>
-    shortcut.bindings.map((binding) =>
+    shortcut.bindings.map((binding, bindingIndex) =>
       bindingToRegistration(
-        `${company.id}-${shortcut.id}-${binding.context}`,
+        `${company.id}-${shortcut.id}-${binding.context}-${bindingIndex}`,
         binding,
       ),
     ),
@@ -60,7 +74,7 @@ export function ShortcutDetail({ group }: { group: ShortcutGroup }) {
           </p>
           <div className="mt-4 flex flex-wrap items-center gap-3">
             <AvatarGroup>
-              {group.entries.map(({ company }) => (
+              {visibleEntries.map(({ company }) => (
                 <Avatar key={company.id} title={company.name}>
                   <AvatarImage
                     alt={`${company.name} icon`}
@@ -69,6 +83,13 @@ export function ShortcutDetail({ group }: { group: ShortcutGroup }) {
                   <AvatarFallback>{company.name[0]}</AvatarFallback>
                 </Avatar>
               ))}
+              {overflowCount > 0 ? (
+                <Avatar title={`${overflowCount} more`}>
+                  <AvatarFallback className="text-[10px] font-medium">
+                    +{overflowCount}
+                  </AvatarFallback>
+                </Avatar>
+              ) : null}
             </AvatarGroup>
             <span className="text-xs text-zinc-500 dark:text-zinc-400">
               used by {appCount} app{appCount === 1 ? "" : "s"}
@@ -81,20 +102,17 @@ export function ShortcutDetail({ group }: { group: ShortcutGroup }) {
           </div>
         </div>
 
-        <KbdGroup className="ml-auto justify-end">
-          {chords.map((chord) => (
-            <span
-              className="inline-flex items-center gap-0.5 rounded-md bg-white shadow-sm dark:bg-zinc-900"
-              key={chord.join("+")}
-            >
-              {chord.map((key) => (
+        {topChord.length > 0 ? (
+          <KbdGroup className="ml-auto justify-end">
+            <span className="inline-flex items-center gap-0.5 rounded-md bg-white shadow-sm dark:bg-zinc-900">
+              {topChord.map((key) => (
                 <Kbd className="border-0 shadow-none" key={key}>
                   {key}
                 </Kbd>
               ))}
             </span>
-          ))}
-        </KbdGroup>
+          </KbdGroup>
+        ) : null}
       </header>
 
       <section className="mt-10">
@@ -105,8 +123,8 @@ export function ShortcutDetail({ group }: { group: ShortcutGroup }) {
         <HotkeyHighlightProvider registrations={registrations}>
           <ul className="mt-3 space-y-3">
             {group.entries.flatMap(({ company, shortcut }) =>
-              shortcut.bindings.map((binding) => {
-                const highlightId = `${company.id}-${shortcut.id}-${binding.context}`;
+              shortcut.bindings.map((binding, bindingIndex) => {
+                const highlightId = `${company.id}-${shortcut.id}-${binding.context}-${bindingIndex}`;
 
                 return (
                   <li key={highlightId}>
