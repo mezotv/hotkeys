@@ -45,6 +45,7 @@ export function AddShortcutButton() {
           <Kbd className="min-w-5 px-1 py-0 text-[10px] leading-4">S</Kbd>
         </a>
       }
+      size="sm"
     />
   );
 }

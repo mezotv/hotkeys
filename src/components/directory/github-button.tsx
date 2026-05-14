@@ -45,6 +45,7 @@ export function GitHubButton() {
           <Kbd className="min-w-5 px-1 py-0 text-[10px] leading-4">G</Kbd>
         </a>
       }
+      size="sm"
       variant="outline"
     />
   );
