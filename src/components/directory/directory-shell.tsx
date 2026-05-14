@@ -61,7 +61,9 @@ export function DirectoryShell({
 
   const shortcutGroups = useMemo(
     () =>
-      query.trim() ? groupHotkeys(filteredHotkeys) : initialShortcutGroups,
+      query.trim()
+        ? groupHotkeys(filteredHotkeys, { query })
+        : initialShortcutGroups,
     [filteredHotkeys, initialShortcutGroups, query],
   );
 
