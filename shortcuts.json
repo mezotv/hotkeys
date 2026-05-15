@@ -1302,5 +1302,75 @@
         "note": "The dashboard also accepts Ctrl+K on non-macOS platforms."
       }
     ]
+  },
+  {
+    "id": "search",
+    "companyId": "t3-chat",
+    "action": "Search",
+    "description": "Open search from anywhere in T3 Chat.",
+    "tags": ["search", "navigation"],
+    "bindings": [
+      {
+        "context": "global",
+        "contextLabel": "T3 Chat app",
+        "keys": ["⌘", "K"]
+      }
+    ]
+  },
+  {
+    "id": "new-chat",
+    "companyId": "t3-chat",
+    "action": "New Chat",
+    "description": "Start a new chat from anywhere in T3 Chat.",
+    "tags": ["chat", "create"],
+    "bindings": [
+      {
+        "context": "global",
+        "contextLabel": "T3 Chat app",
+        "keys": ["⌘", "⇧", "O"]
+      }
+    ]
+  },
+  {
+    "id": "toggle-sidebar",
+    "companyId": "t3-chat",
+    "action": "Toggle Sidebar",
+    "description": "Show or hide the T3 Chat sidebar.",
+    "tags": ["sidebar", "layout", "navigation"],
+    "bindings": [
+      {
+        "context": "global",
+        "contextLabel": "T3 Chat app",
+        "keys": ["⌘", "B"]
+      }
+    ]
+  },
+  {
+    "id": "open-model-picker",
+    "companyId": "t3-chat",
+    "action": "Open Model Picker",
+    "description": "Open the model picker from anywhere in T3 Chat.",
+    "tags": ["model", "picker", "ai"],
+    "bindings": [
+      {
+        "context": "global",
+        "contextLabel": "T3 Chat app",
+        "keys": ["⌘", "/"]
+      }
+    ]
+  },
+  {
+    "id": "delete-current-chat",
+    "companyId": "t3-chat",
+    "action": "Delete Current Chat",
+    "description": "Delete the currently open T3 Chat conversation.",
+    "tags": ["chat", "delete"],
+    "bindings": [
+      {
+        "context": "global",
+        "contextLabel": "T3 Chat app",
+        "keys": ["⌘", "⇧", "⌫"]
+      }
+    ]
   }
 ]

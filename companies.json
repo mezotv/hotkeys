@@ -110,5 +110,13 @@
     "website": "https://mintlify.com",
     "description": "Meet the next generation of documentation. AI-native, beautiful out-of-the-box, and built for developers.",
     "category": "Developer tools"
+  },
+  {
+    "id": "t3-chat",
+    "name": "T3 Chat",
+    "slug": "t3-chat",
+    "website": "https://t3.chat",
+    "description": "T3 Chat is an AI chat app for fast conversations with multiple models.",
+    "category": "AI"
   }
 ]
