@@ -11,20 +11,12 @@ import {
 } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { Kbd, KbdGroup } from "@/components/ui/kbd";
+import { Kbd, KbdChord, KbdGroup } from "@/components/ui/kbd";
 import type { ShortcutGroup } from "@/lib/types";
 import { getCompanyIconUrl } from "@/utils/icons";
 
 function Chord({ keys }: { keys: string[] }) {
-  return (
-    <span className="inline-flex items-center gap-0.5 rounded-md bg-white shadow-sm dark:bg-zinc-900">
-      {keys.map((key) => (
-        <Kbd className="border-0 shadow-none" key={key}>
-          {key}
-        </Kbd>
-      ))}
-    </span>
-  );
+  return <KbdChord keys={keys} />;
 }
 
 export function GroupedShortcutRow({ group }: { group: ShortcutGroup }) {

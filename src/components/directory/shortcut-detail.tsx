@@ -8,7 +8,7 @@ import {
   AvatarImage,
 } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { Kbd, KbdGroup } from "@/components/ui/kbd";
+import { KbdChord, KbdGroup } from "@/components/ui/kbd";
 import type { ShortcutGroup } from "@/lib/types";
 import { bindingToRegistration } from "@/utils/hotkey-registration";
 import { getCompanyIconUrl } from "@/utils/icons";
@@ -104,13 +104,7 @@ export function ShortcutDetail({ group }: { group: ShortcutGroup }) {
 
         {topChord.length > 0 ? (
           <KbdGroup className="ml-auto justify-end">
-            <span className="inline-flex items-center gap-0.5 rounded-md bg-white shadow-sm dark:bg-zinc-900">
-              {topChord.map((key) => (
-                <Kbd className="border-0 shadow-none" key={key}>
-                  {key}
-                </Kbd>
-              ))}
-            </span>
+            <KbdChord keys={topChord} />
           </KbdGroup>
         ) : null}
       </header>
