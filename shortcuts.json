@@ -53,7 +53,7 @@
       {
         "context": "dashboard",
         "contextLabel": "Notra dashboard header",
-        "keys": ["D"]
+        "keys": ["S"]
       }
     ]
   },
@@ -138,6 +138,20 @@
         "context": "dashboard",
         "contextLabel": "Notra dashboard",
         "keys": ["⌘", ","]
+      }
+    ]
+  },
+  {
+    "id": "toggle-mode",
+    "companyId": "notra",
+    "action": "Toggle mode",
+    "description": "Switch between light and dark display modes.",
+    "tags": ["theme", "appearance", "mode"],
+    "bindings": [
+      {
+        "context": "dashboard",
+        "contextLabel": "Notra dashboard",
+        "keys": ["D"]
       }
     ]
   },
