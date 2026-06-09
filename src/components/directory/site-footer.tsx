@@ -15,7 +15,7 @@ export function SiteFooter() {
         </a>
       </p>
       <a
-        className="font-medium text-zinc-700 transition hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-zinc-50"
+        className="font-medium text-zinc-700 underline decoration-black/20 transition hover:text-zinc-950 hover:decoration-black dark:text-zinc-300 dark:decoration-white/25 dark:hover:text-zinc-50 dark:hover:decoration-white"
         href={GITHUB_REPO_URL}
         rel="noreferrer"
         target="_blank"
