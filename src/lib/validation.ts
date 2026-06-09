@@ -1,7 +1,8 @@
 import type { Company, Shortcut } from "./types";
 
-const slugPattern = /^[a-z][a-zA-Z0-9]*$/;
-const shortcutIdPattern = /^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$/;
+const slugPattern = /^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$/;
+const shortcutIdPattern = slugPattern;
+const contextPattern = /^[a-z][a-zA-Z0-9]*$/;
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -124,7 +125,7 @@ export function assertShortcuts(value: unknown): asserts value is Shortcut[] {
         `shortcuts[${shortcutIndex}].bindings[${bindingIndex}].contextLabel`,
       );
 
-      if (!slugPattern.test(binding.context)) {
+      if (!contextPattern.test(binding.context)) {
         throw new Error(
           `shortcuts[${shortcutIndex}].bindings[${bindingIndex}].context must be a slug`,
         );
