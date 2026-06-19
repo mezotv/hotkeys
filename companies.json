@@ -118,5 +118,13 @@
     "website": "https://t3.chat",
     "description": "T3 Chat is an AI chat app for fast conversations with multiple models.",
     "category": "AI"
+  },
+  {
+    "id": "cursor",
+    "name": "Cursor",
+    "slug": "cursor",
+    "website": "https://cursor.com",
+    "description": "Cursor is an AI code editor built to help developers write, understand, and ship software faster.",
+    "category": "Developer tools"
   }
 ]

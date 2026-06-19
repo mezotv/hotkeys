@@ -1386,5 +1386,89 @@
         "keys": ["⌘", "⇧", "⌫"]
       }
     ]
+  },
+  {
+    "id": "new-agent",
+    "companyId": "cursor",
+    "action": "New Agent",
+    "description": "Start a new Cursor agent conversation.",
+    "tags": ["agent", "ai", "chat"],
+    "bindings": [
+      {
+        "context": "global",
+        "contextLabel": "Cursor app",
+        "keys": ["⇧", "⌘", "L"]
+      }
+    ]
+  },
+  {
+    "id": "show-terminal",
+    "companyId": "cursor",
+    "action": "Show Terminal",
+    "description": "Show or focus the integrated terminal in Cursor.",
+    "tags": ["terminal", "developer tools"],
+    "bindings": [
+      {
+        "context": "global",
+        "contextLabel": "Cursor app",
+        "keys": ["⌘", "J"]
+      }
+    ]
+  },
+  {
+    "id": "search-files",
+    "companyId": "cursor",
+    "action": "Search Files",
+    "description": "Open file search in Cursor.",
+    "tags": ["search", "files", "navigation"],
+    "bindings": [
+      {
+        "context": "global",
+        "contextLabel": "Cursor app",
+        "keys": ["⌘", "P"]
+      }
+    ]
+  },
+  {
+    "id": "open-browser",
+    "companyId": "cursor",
+    "action": "Open Browser",
+    "description": "Open the browser panel in Cursor.",
+    "tags": ["browser", "preview", "navigation"],
+    "bindings": [
+      {
+        "context": "global",
+        "contextLabel": "Cursor app",
+        "keys": ["⇧", "⌘", "B"]
+      }
+    ]
+  },
+  {
+    "id": "maximize-chat",
+    "companyId": "cursor",
+    "action": "Maximize Chat",
+    "description": "Maximize the Cursor chat panel.",
+    "tags": ["chat", "layout"],
+    "bindings": [
+      {
+        "context": "global",
+        "contextLabel": "Cursor app",
+        "keys": ["⌥", "⌘", "E"]
+      }
+    ]
+  },
+  {
+    "id": "add-repository",
+    "companyId": "cursor",
+    "action": "Add Repository",
+    "description": "Add a repository to the current Cursor workspace.",
+    "tags": ["repository", "workspace"],
+    "bindings": [
+      {
+        "context": "global",
+        "contextLabel": "Cursor app",
+        "keys": ["⌥", "⌘", "A"]
+      }
+    ]
   }
 ]
